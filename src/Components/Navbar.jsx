@@ -1,4 +1,4 @@
-import { AppBar, IconButton, Stack, Toolbar } from "@mui/material";
+import { AppBar, Button, IconButton, Stack, Toolbar } from "@mui/material";
 import React from "react";
 import { useTheme } from "styled-components";
 import logoWithoutName from "../Assets/Icons/LogoWithName.svg";
@@ -32,10 +32,9 @@ const Navbar = () => {
           <Redirect link={Routes.HomeRouteLink}>
             <IconButton
               sx={{
-                width: "70px",
+                width: { xs: "70px", md: "90px", lg: "90px" },
                 height: "auto",
                 mr: 2,
-                display: { sm: "none" },
               }}
             >
               <img
@@ -47,7 +46,11 @@ const Navbar = () => {
           </Redirect>
           <CreateModal
             ButtonContent={
-              <IconButton>
+              <IconButton
+                sx={{
+                  display: { sm: "block", md: "none" },
+                }}
+              >
                 <MenuIcon
                   size="large"
                   fontSize="large"
@@ -55,9 +58,49 @@ const Navbar = () => {
                 />
               </IconButton>
             }
-            ModalContent={Sidebar}g
+            ModalContent={Sidebar}
+            g
             position="left"
           />
+          <Stack
+            direction={"row"}
+            justifyContent="space-between"
+            alignItems={"center"}
+            width="50%"
+          >
+            <Stack
+              direction={"row"}
+              justifyContent="center"
+              alignItems={"center"}
+            >
+              <Redirect link={Routes.HomeRouteLink}>
+                {" "}
+                <Button sx={{ color: palette.secondary.main }}>About Us</Button>
+              </Redirect>
+              <Button sx={{ color: palette.secondary.main }}>
+                Produts and Services
+              </Button>
+              <Button sx={{ color: palette.secondary.main }}>News</Button>
+              <Button sx={{ color: palette.secondary.main }}>Contacts</Button>
+            </Stack>
+            <Stack>
+              <Button
+                size="large"
+                variant="contained"
+                sx={{
+                  background: palette.secondary.main,
+                  color: palette.primary.main,
+                  "&:hover": {
+                    background: palette.secondary.main,
+                    color: palette.primary.dark,
+                  },
+                }}
+              >
+                {" "}
+                BECOME A PATNER
+              </Button>
+            </Stack>
+          </Stack>
         </Toolbar>
       </AppBar>
     </Stack>

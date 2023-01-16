@@ -1,6 +1,4 @@
 const palette = {
-  mode: "light",
-  "grey[100]": "#f5f5f5",
   primary: {
     light: "#5D80C8",
     main: "#4267b2",
