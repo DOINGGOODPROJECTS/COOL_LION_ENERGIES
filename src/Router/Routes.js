@@ -1,4 +1,5 @@
 const Routes = {
+  StartRouteLink: "/",
   HomeRouteLink: "/",
   AboutRouteLink: "/about",
 };
