@@ -66,12 +66,13 @@ const Navbar = () => {
             direction={"row"}
             justifyContent="space-between"
             alignItems={"center"}
-            width="50%"
+            width="60%"
           >
             <Stack
               direction={"row"}
               justifyContent="center"
               alignItems={"center"}
+              spacing={1}
             >
               <Redirect link={Routes.HomeRouteLink}>
                 {" "}
