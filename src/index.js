@@ -5,13 +5,17 @@ import { RouterProvider } from "react-router-dom";
 import Router from "./Router/Router";
 import { ThemeProvider } from "styled-components";
 import Theme from "./Themes/Theme";
+import { Provider } from "react-redux";
+import store from "./App/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={Theme}>
-      <RouterProvider router={Router} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={Theme}>
+        <RouterProvider router={Router} />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 
