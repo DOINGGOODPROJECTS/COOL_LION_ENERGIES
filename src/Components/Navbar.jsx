@@ -1,4 +1,4 @@
-import { AppBar, IconButton, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Stack, Toolbar } from "@mui/material";
 import React from "react";
 import { useTheme } from "styled-components";
 import logoWithoutName from "../Assets/Icons/LogoWithName.svg";
@@ -55,14 +55,13 @@ const Navbar = () => {
                 />
               </IconButton>
             }
-            ModalContent={Sidebar}
-            position="right"
+            ModalContent={Sidebar}g
+            position="left"
           />
         </Toolbar>
       </AppBar>
     </Stack>
   );
 };
-
 
 export default Navbar;
