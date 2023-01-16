@@ -1,9 +1,13 @@
-import React from 'react'
+import { Stack } from "@mui/material";
+import React from "react";
+import Navbar from "../Components/Navbar";
 
 const Header = () => {
   return (
-    <div>Header</div>
-  )
-}
+    <Stack sx={{marginBottom:"10vh"}}>
+      <Navbar />
+    </Stack>
+  );
+};
 
-export default Header
+export default Header;

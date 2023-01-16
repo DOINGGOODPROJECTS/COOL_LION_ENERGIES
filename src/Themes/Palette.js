@@ -1,4 +1,4 @@
-const Palette = {
+const palette = {
   mode: "light",
   "grey[100]": "#f5f5f5",
   primary: {
@@ -33,4 +33,4 @@ const Palette = {
   },
 };
 
-export default Palette;
+export default palette;
