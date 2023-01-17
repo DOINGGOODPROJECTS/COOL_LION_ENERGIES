@@ -39,9 +39,9 @@ const Partner = () => {
           height="315"
           src="https://www.youtube.com/embed/7f91fGZj3TM"
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
         <Typography variant="h6" color={"white"}>
           We preserve what is valuable to you
