@@ -15,15 +15,15 @@ const Partner = () => {
         <Typography variant="h3" color={"white"}>
           Your Ideal Partner
         </Typography>
-        <Stack spacing={1} sx={{ width: "80%" }}>
-          <Typography variant="h6" color={"white"}>
+        <Stack spacing={1} sx={{ width: "100%" }}>
+          <Typography variant="h6" color={"white"} sx={{ textAlign: "center" }}>
             COOL LION ENERGIES is a specialist in Côte d’Ivoire majoring in the
             construction, assembly and provision of storage infrastructures and
             refrigerated storage powered by clean energy. Our solutions provide
             a wide range of support in different sectors, in particular
             agriculture, agri-food, industries and trade.
           </Typography>
-          <Typography variant="h6" color={"white"}>
+          <Typography variant="h6" color={"white"} sx={{ textAlign: "center" }}>
             We have been awarded as the best small infrastructure innovation by
             the African Union Development Agency.
           </Typography>
