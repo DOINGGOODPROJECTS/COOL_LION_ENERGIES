@@ -1,10 +1,9 @@
 import { Button, Stack, Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import React from "react";
 import { useTheme } from "styled-components";
 
 const Solutions = () => {
-  const { palette, width } = useTheme();
+  const { palette } = useTheme();
   return (
     <Stack
       sx={{ background: palette.primary.main }}
@@ -49,17 +48,17 @@ const SolutionContent = ({ inverse = false }) => {
         alignItems={inverse === false ? 'flex-start' : "flex-end"}
         justifyContent={"space-around"}
       >
-        <Box>
-          <Typography variant="h4" sx={{ color: palette.secondary.light }}>
+        <Stack spacing={2}>
+          <Typography variant="h3" sx={{ color: palette.secondary.light }}>
             Cool Emergency Rental
           </Typography>
           <Typography
-            sx={{ fontSize: "1.1rem", color: palette.secondary.light }}
+            sx={{ fontSize: "1.3rem", color: palette.secondary.light }}
           >
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quam
             laboriosam, cum obcaecati eaque maiores.
           </Typography>
-        </Box>
+        </Stack>
         <Button
           sx={{
             background: palette.secondary.light,
@@ -73,7 +72,7 @@ const SolutionContent = ({ inverse = false }) => {
         </Button>
       </Stack>
       <Stack
-        sx={{ width: "45%", height: "100%" }}
+        sx={{ width: "45%", height: "100%", }}
         justifyContent="center"
         alignItems="center"
       >
@@ -83,6 +82,7 @@ const SolutionContent = ({ inverse = false }) => {
           style={{
             width: "100%",
             maxHeight: "80%",
+            borderRadius:'40px'
           }}
         />
       </Stack>
