@@ -49,7 +49,7 @@ const SolutionContent = ({ inverse = false }) => {
         justifyContent={"space-around"}
       >
         <Stack spacing={2}>
-          <Typography variant="h3" sx={{ color: palette.secondary.light }}>
+          <Typography variant="h4" sx={{ color: palette.secondary.light }}>
             Cool Emergency Rental
           </Typography>
           <Typography

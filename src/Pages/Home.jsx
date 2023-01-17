@@ -4,6 +4,7 @@ import Waves from "../Components/Waves";
 import Partner from "../Containers/Home/Partner";
 import Slider from "../Containers/Home/Slider";
 import Solutions from "../Containers/Home/Solutions";
+import News from "../Containers/News";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <Partner />
       <Solutions/>
       <InverseWaves />
+      <News/>
     </>
   );
 };
