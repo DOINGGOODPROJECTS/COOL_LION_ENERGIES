@@ -7,7 +7,7 @@ const Partner = () => {
   return (
     <Stack sx={{ width: "100%", background: palette.primary.main }}>
       <Stack
-        sx={{ margin: "10px auto 20px auto ", width: width }}
+        sx={{ margin: "0 auto 20px auto ", width: width }}
         justifyContent="center"
         alignItems={"center"}
         spacing={5}
