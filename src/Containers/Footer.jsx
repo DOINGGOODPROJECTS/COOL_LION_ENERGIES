@@ -1,9 +1,29 @@
-import { Box, Divider, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  IconButton,
+  MenuItem,
+  Select,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "styled-components";
+import { Stack } from "@mui/system";
+import { useDispatch } from "react-redux";
+import { changeLanguage } from "../Context/LanguageSlice";
 const Footer = () => {
   const { palette, width } = useTheme();
+  const [language, setLanguage] = React.useState("english");
+  const dispatch = useDispatch();
+
+  const handleLanguage = React.useCallback(
+    (event) => {
+      setLanguage(event.target.value);
+      dispatch(changeLanguage(event.target.value));
+    },
+    [dispatch]
+  );
   return (
     <Box
       sx={{
@@ -149,6 +169,50 @@ const Footer = () => {
                   sx={{ color: palette.secondary.light }}
                 />
               </IconButton>{" "}
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                flexDirection: "row",
+                columnGap: { xs: "auto", sm: "10px" },
+                rowGrap: "10px",
+                flexWrap: "wrap",
+              }}
+            >
+              <Select
+                size="small"
+                sx={{
+                  width: "150px",
+                  marginBottom: "10px",
+                  borderColor: palette.secondary.light,
+                  background: palette.secondary.light,
+                }}
+                value={language}
+                onChange={handleLanguage}
+              >
+                <MenuItem value="english">
+                  <Stack direction="row" spacing={2}>
+                    <img
+                      src="https://flagcdn.com/us.svg"
+                      alt="english"
+                      style={{ width: "30px", height: "20px" }}
+                    />
+                    <Typography>English</Typography>
+                  </Stack>
+                </MenuItem>
+                <MenuItem value="french">
+                  <Stack direction="row" spacing={2}>
+                    <img
+                      src="https://flagcdn.com/fr.svg"
+                      alt="Français"
+                      style={{ width: "30px", height: "20px" }}
+                    />
+                    <Typography>Français</Typography>
+                  </Stack>
+                </MenuItem>
+              </Select>
             </Box>
           </Box>
           <Divider color={palette.secondary.main} />

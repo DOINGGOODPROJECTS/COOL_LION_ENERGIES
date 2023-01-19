@@ -7,9 +7,12 @@ import Redirect from "../Helpers/Redirect";
 import Routes from "../Router/Routes";
 import CreateModal from "./Modal/CreateModal";
 import Sidebar from "./Sidebar";
+import { useSelector } from "react-redux";
+import { selectedLanguage } from "../Context/LanguageSlice";
 
 const Navbar = () => {
   const { palette, width } = useTheme();
+  const language = useSelector(selectedLanguage).language;
   return (
     <Stack
       className="Navbar"
@@ -76,7 +79,9 @@ const Navbar = () => {
             >
               <Redirect link={Routes.HomeRouteLink}>
                 {" "}
-                <Button sx={{ color: palette.secondary.main }}>About Us</Button>
+                <Button sx={{ color: palette.secondary.main }}>
+                  {language.appbar.navLink.about}
+                </Button>
               </Redirect>
               <Button sx={{ color: palette.secondary.main }}>
                 Produts and Services

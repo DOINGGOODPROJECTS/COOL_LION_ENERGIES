@@ -1,12 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {};
+import EnglishContent from "../Seeds/Languages/En";
+import FrenchContent from "../Seeds/Languages/Fr";
+const initialState = { language: EnglishContent };
 
 const LanguageSlice = createSlice({
   name: "language",
   initialState: initialState,
   reducers: {
     changeLanguage(state, action) {
-      state.language = action.language;
+      if (action.payload === "french") {
+        state.language = FrenchContent;
+      } else if (action.payload === "english") {
+        state.language = EnglishContent;
+      }
     },
   },
 });

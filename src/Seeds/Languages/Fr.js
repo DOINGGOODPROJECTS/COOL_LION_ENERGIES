@@ -1,3 +1,95 @@
-const Fr = {}
+const FrenchContent = {
+  appbar: {
+    navLink: {
+      about: "A propos",
+      product: "Produits & Services",
+      news: "Actualités",
+      contact: "Contacts",
+    },
+    button: "DEVENIR PARTENAIRE",
+  },
+  home: [
+    {
+      title: "Cool Urgence Location ",
+      text: "Location en urgence de stockage frigorifique sur votre site ou notre site",
+      button: "Learn more",
+    },
+    {
+      title: "Cool Clim - Froid solaire mobile",
+      text: " Des conteneurs frigorifiques ou des groupes électrogènes solaires efficaces",
+      button: "Learn more",
+    },
+    {
+      title: "Cool Hangars - Hangars solaires ",
+      text: "Des hangars modernes pour votre stockage ",
+      button: "Learn more",
+    },
+    {
+      title: "Cool Bâtiments - Bâtiments écologiques ",
+      text: " Des bâtiments écologiques et modernes pour tous vos besoins ",
+      button: "Learn more",
+    },
+  ],
+  partner: {
+    title: "Votre Partenaire Idéal",
+    text: "COOL LION ENERGIES est le spécialiste en Côte d’Ivoire dans la construction, l'assemblage et la mise à disposition d’infrastructures de stockage et de stockage frigorifique par énergie propre. Nos solutions accompagnent tous les secteurs, en particulier l’agriculture, l’agroalimentaire, les industries et le commerce.",
+    subTitle:
+      "Nos solutions ont été primées comme la meilleure innovation de petites infrastructures par l’Agence pour le Développement de l’Union Africaine. ",
+  },
+  video: {
+    link: " https://www.youtube.com/watch?v=7f91fGZj3TM ",
+    text: "Texte en bas: Nous préservons ce qui est précieux pour vous.",
+  },
+  solution: {
+    title: "Nos solutions",
+    content: [
+      {
+        title: "Cool Urgence Location",
+        text: "Location en urgence de stockage frigorifique sur votre site avec nos groupes électrogènes solaires ou notre site à Djorogobité (Angré) où nous mettons à disposition un conteneur frigorifique de 20 pieds.",
+        button: "Find out more",
+      },
+      {
+        title: "Cool Clim",
+        text: "Des conteneurs frigorifiques ou des groupes électrogènes solaires efficaces en location à longue durée, en paiement cash ou paiements périodiques qui vont satisfaire tous vos besoins de conservation. ",
+        button: "Find out more",
+      },
+      {
+        title: "Cool Hangars",
+        text: "Un Hangar solaire vous permet de stocker votre marchandise et de produire aussi de l’énergie pour vos propres besoins et même de la revendre. ",
+        button: "Find out more",
+      },
+      {
+        title: "Cool Bâtiments",
+        text: "Nous construisons des greniers, des aires, des bâtiments de stockage avec une ventilation naturelle et autant que possible des matériaux locaux.",
+        button: "Find out more",
+      },
+    ],
+  },
+  contact: {
+    title: "Ecrivez-nous",
+    form: {
+      firstName: "Nom",
+      lastName: "Prénoms",
+      typeOfRequest: {
+        title: "Nature de la demande",
+        content: [
+          "Cool Urgence Location",
+          "Cool Clim",
+          "Cool Hangar",
+          "Cool Bâtiments",
+          "Conseil & Accompagnemen",
+        ],
+      },
+      country: "Votre Pays",
+      email: "email",
+      phone: "Téléphone",
+      message: "message",
+      send: "ENVOYER",
+    },
+  },
+  footer: {
+    newsLetter: "Abonnez vous à notre newsletter",
+  },
+};
 
-export default Fr;
+export default FrenchContent;
