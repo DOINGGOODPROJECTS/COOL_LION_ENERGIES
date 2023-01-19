@@ -84,10 +84,16 @@ const Navbar = () => {
                 </Button>
               </Redirect>
               <Button sx={{ color: palette.secondary.main }}>
-                Produts and Services
+                {language.appbar.navLink.product}
               </Button>
-              <Button sx={{ color: palette.secondary.main }}>News</Button>
-              <Button sx={{ color: palette.secondary.main }}>Contacts</Button>
+              <Button sx={{ color: palette.secondary.main }}>
+                {" "}
+                {language.appbar.navLink.news}
+              </Button>
+              <Button sx={{ color: palette.secondary.main }}>
+                {" "}
+                {language.appbar.navLink.contact}
+              </Button>
             </Stack>
             <Stack>
               <Button
@@ -103,7 +109,7 @@ const Navbar = () => {
                 }}
               >
                 {" "}
-                BECOME A PATNER
+                {language.appbar.button}
               </Button>
             </Stack>
           </Stack>
