@@ -53,8 +53,7 @@ const EnglishContent = {
       "We have been awarded as the best small infrastructure innovation by the African Union Development Agency.",
   },
   video: {
-    link: " https://www.youtube.com/watch?v=7f91fGZj3TM ",
-    text: "Footer  text : We preserve what is valuable to you",
+    text: "We preserve what is valuable to you",
   },
   solution: {
     title: "our solutions",

@@ -1,11 +1,16 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
+import { selectedLanguage } from "../../Context/LanguageSlice";
 
 const Partner = () => {
   const { width, palette } = useTheme();
+  const { language } = useSelector(selectedLanguage);
   return (
-    <Stack sx={{ width: "100%", background: palette.primary.main }}>
+    <Stack
+      sx={{ width: "100%", background: palette.primary.main, rowGap: "100px" }}
+    >
       <Stack
         sx={{ margin: "0 auto 20px auto ", width: width }}
         justifyContent="center"
@@ -13,19 +18,14 @@ const Partner = () => {
         spacing={5}
       >
         <Typography variant="h3" color={"white"}>
-          Your Ideal Partner
+          {language.partner.title}
         </Typography>
-        <Stack spacing={1} sx={{ width: "100%" }}>
+        <Stack spacing={2} sx={{ width: "100%" }}>
           <Typography variant="h6" color={"white"} sx={{ textAlign: "center" }}>
-            COOL LION ENERGIES is a specialist in Côte d’Ivoire majoring in the
-            construction, assembly and provision of storage infrastructures and
-            refrigerated storage powered by clean energy. Our solutions provide
-            a wide range of support in different sectors, in particular
-            agriculture, agri-food, industries and trade.
+            {language.partner.text}
           </Typography>
           <Typography variant="h6" color={"white"} sx={{ textAlign: "center" }}>
-            We have been awarded as the best small infrastructure innovation by
-            the African Union Development Agency.
+            {language.partner.subTitle}
           </Typography>
         </Stack>
       </Stack>
@@ -35,8 +35,8 @@ const Partner = () => {
         alignItems={"center"}
       >
         <iframe
-          width="560"
-          height="315"
+          width="100%"
+          height="530"
           src="https://www.youtube.com/embed/7f91fGZj3TM"
           title="YouTube video player"
           frameBorder="0"
@@ -44,7 +44,7 @@ const Partner = () => {
           allowFullScreen
         ></iframe>
         <Typography variant="h6" color={"white"}>
-          We preserve what is valuable to you
+          {language.video.text}
         </Typography>
       </Stack>
     </Stack>

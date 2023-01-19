@@ -8,10 +8,6 @@ import { selectedLanguage } from "../../Context/LanguageSlice";
 
 const Slider = () => {
   const [sliderState, setSliderState] = React.useState(0);
-  const [sliderButtonState, setSliderButtonState] = React.useState({
-    prev: false,
-    next: false,
-  });
   const language = useSelector(selectedLanguage).language;
 
   const { palette, width } = useTheme();
@@ -41,7 +37,6 @@ const Slider = () => {
         <IconButton
           size="large"
           onClick={handlePrev}
-          disabled={sliderButtonState.prev}
         >
           <ChevronLeftIcon
             fontSize="large"
@@ -56,7 +51,6 @@ const Slider = () => {
         <IconButton
           size="large"
           onClick={handleNext}
-          disabled={sliderButtonState.next}
         >
           <ChevronRightIcon
             fontSize="large"

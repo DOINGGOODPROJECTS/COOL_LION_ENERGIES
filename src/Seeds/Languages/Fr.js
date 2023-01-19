@@ -1,6 +1,5 @@
 import buildingsImage from "../../Assets/Imgs/buildings.jpg";
 import clim from "../../Assets/Imgs/clim.jpg";
-import meeting from "../../Assets/Imgs/meeting.jpg";
 import rental from "../../Assets/Imgs/rental.jpg";
 import sheds from "../../Assets/Imgs/sheds.jpg";
 
