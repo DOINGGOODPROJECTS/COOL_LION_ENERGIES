@@ -22,7 +22,12 @@ const News = () => {
         sx={{ width: width }}
         spacing={15}
       >
-        <Redirect target={true} link={"https://google.com"}>
+        <Redirect
+          target={true}
+          link={
+            "https://educarriere.ci/managers-mois/manager_mois_interview.php?MngId=mjX556lhf457AVv794gKI966 "
+          }
+        >
           <IconButton sx={{ width: "250px" }}>
             <img
               src={educarriereImg}
@@ -31,7 +36,12 @@ const News = () => {
             />
           </IconButton>
         </Redirect>
-        <Redirect target={true} link={"https://google.com"}>
+        <Redirect
+          target={true}
+          link={
+            "https://www.climate-kic.org/innovation-spotlight/africa-climaccelerator-start-up-spotlight-cool-lion/ "
+          }
+        >
           <IconButton sx={{ width: "250px" }}>
             <img
               src={ClimateImg}
@@ -40,7 +50,12 @@ const News = () => {
             />
           </IconButton>
         </Redirect>{" "}
-        <Redirect target={true} link={"https://google.com"}>
+        <Redirect
+          target={true}
+          link={
+            "https://www.raconteur.net/climate-clean-tech-startups-africa-cop27/ "
+          }
+        >
           <IconButton sx={{ width: "250px" }}>
             <img
               src={raconteurImg}

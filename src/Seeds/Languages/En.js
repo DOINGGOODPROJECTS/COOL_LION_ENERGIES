@@ -98,6 +98,7 @@ const EnglishContent = {
     form: {
       firstName: "First name",
       lastName: "Last name",
+      organisation:"Name of your organization",
       typeOfRequest: {
         title: "Type of request",
         content: [
@@ -108,11 +109,11 @@ const EnglishContent = {
           "Consulting & Support",
         ],
       },
-      country: "country",
-      email: "email",
-      phone: "telephone",
-      message: "message",
-      send: "send",
+      country: "Choose your country",
+      email: "Email",
+      phone: "Telephone",
+      message: "Message",
+      send: "SEND",
     },
   },
   footer: {

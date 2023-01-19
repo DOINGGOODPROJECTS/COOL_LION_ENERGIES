@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
-export default function CountrySelect({ items, selectCountry }) {
+export default function CountrySelect({ items, title, selectCountry }) {
   items.forEach((item) => {
     item.label = item.name.common;
   });
@@ -34,7 +34,7 @@ export default function CountrySelect({ items, selectCountry }) {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Choose a country"
+          label={title}
           inputProps={{
             ...params.inputProps,
             autoComplete: "new-password", // disable autocomplete and autofill

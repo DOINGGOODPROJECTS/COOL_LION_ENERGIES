@@ -10,13 +10,13 @@ import React from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "styled-components";
 import { Stack } from "@mui/system";
-import { useDispatch } from "react-redux";
-import { changeLanguage } from "../Context/LanguageSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { changeLanguage, selectedLanguage } from "../Context/LanguageSlice";
 const Footer = () => {
   const { palette, width } = useTheme();
   const [language, setLanguage] = React.useState("english");
   const dispatch = useDispatch();
-
+  const ContentLanguage = useSelector(selectedLanguage).language;
   const handleLanguage = React.useCallback(
     (event) => {
       setLanguage(event.target.value);
@@ -79,7 +79,7 @@ const Footer = () => {
             }}
           >
             <FooterBlock
-              Title={"GET TO KNOW US"}
+              Title={"PAGES"}
               Items={[
                 "About us",
                 "How Cool Lion Finance works",

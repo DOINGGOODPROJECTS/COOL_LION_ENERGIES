@@ -92,6 +92,7 @@ const FrenchContent = {
     form: {
       firstName: "Nom",
       lastName: "Prénoms",
+      organisation:'Nom de votre organisation',
       typeOfRequest: {
         title: "Nature de la demande",
         content: [
@@ -103,9 +104,9 @@ const FrenchContent = {
         ],
       },
       country: "Votre Pays",
-      email: "email",
+      email: "Email",
       phone: "Téléphone",
-      message: "message",
+      message: "Message",
       send: "ENVOYER",
     },
   },

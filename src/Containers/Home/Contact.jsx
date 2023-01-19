@@ -11,12 +11,15 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import CountrySelect from "../../Components/CountrySelect";
+import { selectedLanguage } from "../../Context/LanguageSlice";
 import countriesList from "../../Seeds/Forms/country";
 
 const Contact = () => {
   const { palette, width } = useTheme();
+  const { language } = useSelector(selectedLanguage);
   return (
     <Stack
       justifyContent="center"
@@ -43,7 +46,7 @@ const Contact = () => {
             rowGap: "20px",
           }}
         >
-          <Typography variant="h3">Contact Us</Typography>
+          <Typography variant="h3">{language.contact.title}</Typography>
 
           <Stack
             direction={"row"}
@@ -54,12 +57,12 @@ const Contact = () => {
           >
             <TextField
               variant="outlined"
-              label={"First name"}
+              label={language.contact.form.firstName}
               sx={{ width: "100%" }}
             />
             <TextField
               variant="outlined"
-              label={"Last name"}
+              label={language.contact.form.lastName}
               sx={{ width: "100%" }}
             />
           </Stack>
@@ -72,34 +75,35 @@ const Contact = () => {
           >
             <TextField
               variant="outlined"
-              label={"Email"}
+              label={language.contact.form.email}
               sx={{ width: "100%" }}
             />
             <TextField
               variant="outlined"
-              label={"Phone"}
+              label={language.contact.form.phone}
               sx={{ width: "100%" }}
             />
           </Stack>
           <TextField
             sx={{ width: "80%" }}
             variant="outlined"
-            label={"Name of your Organization"}
+            label={language.contact.form.organisation}
           />
           <FormControl sx={{ width: "80%" }} component="div">
             <InputLabel id="demo-simple-select-label">
-              Type of request
+              {language.contact.form.typeOfRequest.title}
             </InputLabel>
             <Select sx={{ width: "100%" }}>
-              <MenuItem>hello</MenuItem>
-              <MenuItem>hello</MenuItem>
-              <MenuItem>hello</MenuItem>
+              {language.contact.form.typeOfRequest.content.map((item) => {
+                return <MenuItem key={item}>{item}</MenuItem>;
+              })}
             </Select>
           </FormControl>
 
           <Box sx={{ width: "80%" }}>
             <CountrySelect
               items={countriesList}
+              title={language.contact.form.country}
               selectCountry={(value) => console.log(value)}
             />
           </Box>
@@ -107,7 +111,7 @@ const Contact = () => {
             <TextField
               id="story"
               name="story"
-              label={"message"}
+              label={language.contact.form.message}
               sx={{
                 width: "100%",
               }}
@@ -135,7 +139,7 @@ const Contact = () => {
               },
             }}
           >
-            Submit
+            {language.contact.form.send}
           </Button>
         </Box>
       </Stack>
