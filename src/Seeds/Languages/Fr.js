@@ -6,9 +6,6 @@ import emergency from "../../Assets/Imgs/emergency.png";
 import climSolution from "../../Assets/Imgs/climSolution.jpg";
 import shedsSolution from "../../Assets/Imgs/shedsSolution.jpg";
 
-
-
-
 const FrenchContent = {
   appbar: {
     navLink: {
@@ -25,28 +22,24 @@ const FrenchContent = {
       text: "Location en urgence de stockage frigorifique sur votre site ou notre site",
       button: "Learn more",
       image: rental,
-
     },
     {
       title: "Cool Clim - Froid solaire mobile",
       text: " Des conteneurs frigorifiques ou des groupes électrogènes solaires efficaces",
       button: "Learn more",
       image: clim,
-
     },
     {
       title: "Cool Hangars - Hangars solaires ",
       text: "Des hangars modernes pour votre stockage ",
       button: "Learn more",
       image: sheds,
-
     },
     {
       title: "Cool Bâtiments - Bâtiments écologiques ",
       text: " Des bâtiments écologiques et modernes pour tous vos besoins ",
       button: "Learn more",
       image: buildingsImage,
-
     },
   ],
   partner: {
@@ -92,7 +85,7 @@ const FrenchContent = {
     form: {
       firstName: "Nom",
       lastName: "Prénoms",
-      organisation:'Nom de votre organisation',
+      organisation: "Nom de votre organisation",
       typeOfRequest: {
         title: "Nature de la demande",
         content: [
@@ -111,6 +104,11 @@ const FrenchContent = {
     },
   },
   footer: {
+    partner: {
+      title: "Partenaire",
+      text: "Rejoignez-nous dans l'émergence",
+      button: "Postulez dès maintenant",
+    },
     newsLetter: "Abonnez vous à notre newsletter",
   },
 };

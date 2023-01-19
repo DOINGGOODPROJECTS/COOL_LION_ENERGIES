@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Divider,
   IconButton,
   MenuItem,
@@ -12,6 +13,8 @@ import { useTheme } from "styled-components";
 import { Stack } from "@mui/system";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage, selectedLanguage } from "../Context/LanguageSlice";
+import Routes from "../Router/Routes";
+import Redirect from "../Helpers/Redirect";
 const Footer = () => {
   const { palette, width } = useTheme();
   const [language, setLanguage] = React.useState("english");
@@ -79,12 +82,24 @@ const Footer = () => {
             }}
           >
             <FooterBlock
-              Title={"PAGES"}
+              Title={"HOME"}
               Items={[
-                "About us",
-                "How Cool Lion Finance works",
-                "FAQS",
-                "Partner With Us",
+                {
+                  title: ContentLanguage.appbar.navLink.about,
+                  link: Routes.HomeRouteLink,
+                },
+                {
+                  title: ContentLanguage.solution.title,
+                  link: Routes.OurSolutionRouteLink,
+                },
+                {
+                  title: ContentLanguage.appbar.navLink.news,
+                  link: Routes.NewsRouteLink,
+                },
+                {
+                  title: ContentLanguage.appbar.navLink.contact,
+                  link: Routes.ContactRouteLink,
+                },
               ]}
             />
           </Box>
@@ -100,8 +115,22 @@ const Footer = () => {
             }}
           >
             <FooterBlock
-              Title={"EXPLORE"}
-              Items={["Happening Now", "Almost Funded"]}
+              Title={"CONTACT"}
+              Items={[
+                {
+                  title: "+225 07 08 06 48 48",
+                  link: Routes.HomeRouteLink,
+                },
+                {
+                  title:
+                    "Angré Djorobite Rond Point Cité SIR en bas Îlot 253 BIS Villa Lot 2446, Abidjan-Côte d’Ivoire ",
+                  link: Routes.OurSolutionRouteLink,
+                },
+                {
+                  title: "client@coollionenergies.com",
+                  link: Routes.NewsRouteLink,
+                },
+              ]}
             />
           </Box>
 
@@ -116,8 +145,25 @@ const Footer = () => {
             }}
           >
             <FooterBlock
-              Title={"LEND"}
-              Items={["Make a loan, change a life.", "Lend now"]}
+              Title={ContentLanguage.appbar.navLink.product}
+              Items={[
+                {
+                  title: ContentLanguage.appbar.navLink.about,
+                  link: Routes.HomeRouteLink,
+                },
+                {
+                  title: ContentLanguage.solution.title,
+                  link: Routes.OurSolutionRouteLink,
+                },
+                {
+                  title: ContentLanguage.appbar.navLink.news,
+                  link: Routes.NewsRouteLink,
+                },
+                {
+                  title: ContentLanguage.appbar.navLink.contact,
+                  link: Routes.ContactRouteLink,
+                },
+              ]}
             />
           </Box>
 
@@ -132,11 +178,21 @@ const Footer = () => {
             }}
           >
             <Typography sx={{ fontWeight: "bold", fontSize: "1.3rem" }}>
-              BORROW
+              {ContentLanguage.footer.partner.title}
             </Typography>
-            <Typography color="secondary">
-              Loans for entrepreneurs doing amazing things.
+            <Typography sx={{ color: palette.secondary.light }}>
+              {ContentLanguage.footer.partner.text}
             </Typography>
+            <Button
+              fontSize="medium"
+              sx={{
+                color: palette.primary.main,
+                background: palette.secondary.light,
+              }}
+              variant="contained"
+            >
+              {ContentLanguage.footer.partner.button}
+            </Button>
           </Box>
         </Box>
 
@@ -163,12 +219,14 @@ const Footer = () => {
               <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                 Follow Us
               </Typography>
-              <IconButton size="medium" color="secondary" variant="contained">
-                <TwitterIcon
-                  fontSize="medium"
-                  sx={{ color: palette.secondary.light }}
-                />
-              </IconButton>{" "}
+              <Redirect link={"https://www.twitter.com/coollionenergies"} target={true}>
+                <IconButton size="medium" color="secondary" variant="contained">
+                  <TwitterIcon
+                    fontSize="medium"
+                    sx={{ color: palette.secondary.light }}
+                  />
+                </IconButton>
+              </Redirect>
             </Box>
             <Box
               sx={{
@@ -239,15 +297,18 @@ const FooterItems = ({ Items }) => {
     <>
       {Items.map((item) => {
         return (
-          <Typography
-            key={item}
-            sx={{
-              "&:hover": { textDecoration: "underline" },
-              textTransform: "capitalize",
-            }}
-          >
-            {item}
-          </Typography>
+          <Redirect link={item.link} key={item.link}>
+            <Typography
+              sx={{
+                "&:hover": { textDecoration: "underline" },
+                textTransform: "capitalize",
+                cursor: "pointer",
+                maxWidth:'250px'
+              }}
+            >
+              {item.title}
+            </Typography>
+          </Redirect>
         );
       })}
     </>

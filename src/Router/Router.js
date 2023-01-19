@@ -17,6 +17,10 @@ const Router = createBrowserRouter([
       },
       {
         path: Routes.AboutRouteLink,
+        element: <Home />,
+      },
+      {
+        path: Routes.ProductRouteLink,
         element: <About />,
       },
     ],

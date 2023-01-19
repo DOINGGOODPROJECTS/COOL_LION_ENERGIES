@@ -11,7 +11,7 @@ const EnglishContent = {
   appbar: {
     navLink: {
       about: "about us",
-      product: "roducts and Services",
+      product: "Products and Services",
       news: "News",
       contact: "contacts",
     },
@@ -117,6 +117,11 @@ const EnglishContent = {
     },
   },
   footer: {
+    partner:{
+      title:'Partner',
+      text:"Join us in the emergence",
+      button:'Apply now'
+    },
     newsLetter: "Subscribe to our newsletter",
   },
 };
