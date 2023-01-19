@@ -3,9 +3,33 @@ import React from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useTheme } from "styled-components";
+import { useSelector } from "react-redux";
+import { selectedLanguage } from "../../Context/LanguageSlice";
 
 const Slider = () => {
+  const [sliderState, setSliderState] = React.useState(0);
+  const [sliderButtonState, setSliderButtonState] = React.useState({
+    prev: false,
+    next: false,
+  });
+  const language = useSelector(selectedLanguage).language;
+
   const { palette, width } = useTheme();
+
+  const handleNext = React.useCallback(() => {
+    if (sliderState !== undefined && sliderState !== null && sliderState < 4) {
+      setSliderState((state) => state + 1);
+    }
+    console.log(sliderState);
+  }, [sliderState]);
+
+  const handlePrev = React.useCallback(() => {
+    if (sliderState !== undefined && sliderState !== null && sliderState > 0) {
+      setSliderState((state) => state - 1);
+    }
+
+    console.log(sliderState);
+  }, [sliderState]);
   return (
     <Stack
       sx={{ margin: "auto", width: width }}
@@ -13,23 +37,37 @@ const Slider = () => {
       justifyContent={"space-between"}
       alignitems={"center"}
     >
-      <IconButton size="large">
-        <ChevronLeftIcon
-          fontSize="large"
-          sx={{ color: palette.primary.main }}
-        />
-      </IconButton>
-      <SliderContent />
-      <IconButton size="large">
-        <ChevronRightIcon
-          fontSize="large"
-          sx={{ color: palette.primary.main }}
-        />
-      </IconButton>
+      <Stack justifyContent={"center"} alignItems="center">
+        <IconButton
+          size="large"
+          onClick={handlePrev}
+          disabled={sliderButtonState.prev}
+        >
+          <ChevronLeftIcon
+            fontSize="large"
+            sx={{ color: palette.primary.main }}
+          />
+        </IconButton>
+      </Stack>
+      {language.home.map((item, key) => {
+        return key === sliderState && <SliderContent {...item} />;
+      })}
+      <Stack justifyContent={"center"} alignItems="center">
+        <IconButton
+          size="large"
+          onClick={handleNext}
+          disabled={sliderButtonState.next}
+        >
+          <ChevronRightIcon
+            fontSize="large"
+            sx={{ color: palette.primary.main }}
+          />
+        </IconButton>
+      </Stack>
     </Stack>
   );
 };
-const SliderContent = () => {
+const SliderContent = ({ title, text, button, image }) => {
   const { palette } = useTheme();
   return (
     <Stack
@@ -43,17 +81,13 @@ const SliderContent = () => {
       }}
     >
       <Stack
-        sx={{ width: "53%", height: "100%" }}
+        sx={{ width: "42%", height: "100%" }}
         alignItems="flex-start"
         justifyContent={"space-around"}
       >
-        <Typography variant="h2">
-          Lorem ipsum dolor sit amet consectetur.
-        </Typography>
+        <Typography variant="h2">{title}</Typography>
         <Box>
-          <Typography>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et, eum.
-          </Typography>
+          <Typography>{text}</Typography>
           <Button
             variant="outlined"
             sx={{
@@ -62,21 +96,20 @@ const SliderContent = () => {
               marginTop: "15px",
             }}
           >
-            Lorem ipsum dolor
+            {button}
           </Button>
         </Box>
       </Stack>
       <Stack
-        sx={{ width: "45%", height: "100%" }}
+        sx={{ width: "55%", height: "100%" }}
         justifyContent="center"
         alignItems="center"
       >
         <img
-          src=" https://picsum.photos/1000/1000"
+          src={image}
           alt="les information"
           style={{
             width: "100%",
-            maxHeight: "80%",
           }}
         />
       </Stack>

@@ -1,3 +1,9 @@
+import buildingsImage from "../../Assets/Imgs/buildings.jpg";
+import clim from "../../Assets/Imgs/clim.jpg";
+import meeting from "../../Assets/Imgs/meeting.jpg";
+import rental from "../../Assets/Imgs/rental.jpg";
+import sheds from "../../Assets/Imgs/sheds.jpg";
+
 const EnglishContent = {
   appbar: {
     navLink: {
@@ -13,26 +19,31 @@ const EnglishContent = {
       title: "Emergency rental ",
       text: "of cold storage on your site or on our site",
       button: "Learn more",
+      image: rental,
     },
     {
       title: "Cool Clim - Solar mobile cooling",
       text: "Solar efficient refrigerated containers or generators",
       button: "Learn more",
+      image: clim,
     },
     {
       title: "Cool Sheds - Solar Sheds",
       text: "Modern sheds for your storage",
       button: "Learn more",
+      image: sheds,
     },
     {
       title: "Cool Buildings - Green buildings",
       text: "Green and modern buildings for all your needs",
       button: "Learn more",
+      image: buildingsImage,
     },
     {
       title: "Consulting & Advisory Services",
       text: " Consulting and Advisory for your storage project",
       button: "Learn more",
+      image: meeting,
     },
   ],
   partner: {

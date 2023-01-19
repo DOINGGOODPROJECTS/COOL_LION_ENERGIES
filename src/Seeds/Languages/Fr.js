@@ -1,3 +1,11 @@
+import buildingsImage from "../../Assets/Imgs/buildings.jpg";
+import clim from "../../Assets/Imgs/clim.jpg";
+import meeting from "../../Assets/Imgs/meeting.jpg";
+import rental from "../../Assets/Imgs/rental.jpg";
+import sheds from "../../Assets/Imgs/sheds.jpg";
+
+
+
 const FrenchContent = {
   appbar: {
     navLink: {
@@ -13,21 +21,29 @@ const FrenchContent = {
       title: "Cool Urgence Location ",
       text: "Location en urgence de stockage frigorifique sur votre site ou notre site",
       button: "Learn more",
+      image: rental,
+
     },
     {
       title: "Cool Clim - Froid solaire mobile",
       text: " Des conteneurs frigorifiques ou des groupes électrogènes solaires efficaces",
       button: "Learn more",
+      image: clim,
+
     },
     {
       title: "Cool Hangars - Hangars solaires ",
       text: "Des hangars modernes pour votre stockage ",
       button: "Learn more",
+      image: sheds,
+
     },
     {
       title: "Cool Bâtiments - Bâtiments écologiques ",
       text: " Des bâtiments écologiques et modernes pour tous vos besoins ",
       button: "Learn more",
+      image: buildingsImage,
+
     },
   ],
   partner: {
