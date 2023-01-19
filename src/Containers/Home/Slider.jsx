@@ -34,10 +34,7 @@ const Slider = () => {
       alignitems={"center"}
     >
       <Stack justifyContent={"center"} alignItems="center">
-        <IconButton
-          size="large"
-          onClick={handlePrev}
-        >
+        <IconButton size="large" onClick={handlePrev}>
           <ChevronLeftIcon
             fontSize="large"
             sx={{ color: palette.primary.main }}
@@ -45,13 +42,12 @@ const Slider = () => {
         </IconButton>
       </Stack>
       {language.home.map((item, key) => {
-        return key === sliderState && <SliderContent {...item} />;
+        return (
+          key === sliderState && <SliderContent {...item} key={item.title} />
+        );
       })}
       <Stack justifyContent={"center"} alignItems="center">
-        <IconButton
-          size="large"
-          onClick={handleNext}
-        >
+        <IconButton size="large" onClick={handleNext}>
           <ChevronRightIcon
             fontSize="large"
             sx={{ color: palette.primary.main }}
@@ -79,9 +75,11 @@ const SliderContent = ({ title, text, button, image }) => {
         alignItems="flex-start"
         justifyContent={"space-around"}
       >
-        <Typography variant="h2">{title}</Typography>
+        <Typography variant="h2" sx={{
+          color:palette.primary.main
+        }}>{title}</Typography>
         <Box>
-          <Typography>{text}</Typography>
+          <Typography variant="h6">{text}</Typography>
           <Button
             variant="outlined"
             sx={{

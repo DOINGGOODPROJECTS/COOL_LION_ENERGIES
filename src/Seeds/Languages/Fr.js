@@ -2,6 +2,10 @@ import buildingsImage from "../../Assets/Imgs/buildings.jpg";
 import clim from "../../Assets/Imgs/clim.jpg";
 import rental from "../../Assets/Imgs/rental.jpg";
 import sheds from "../../Assets/Imgs/sheds.jpg";
+import emergency from "../../Assets/Imgs/emergency.png";
+import climSolution from "../../Assets/Imgs/climSolution.jpg";
+import shedsSolution from "../../Assets/Imgs/shedsSolution.jpg";
+
 
 
 
@@ -52,7 +56,6 @@ const FrenchContent = {
       "Nos solutions ont été primées comme la meilleure innovation de petites infrastructures par l’Agence pour le Développement de l’Union Africaine. ",
   },
   video: {
-    link: " https://www.youtube.com/watch?v=7f91fGZj3TM ",
     text: "Texte en bas: Nous préservons ce qui est précieux pour vous.",
   },
   solution: {
@@ -62,21 +65,25 @@ const FrenchContent = {
         title: "Cool Urgence Location",
         text: "Location en urgence de stockage frigorifique sur votre site avec nos groupes électrogènes solaires ou notre site à Djorogobité (Angré) où nous mettons à disposition un conteneur frigorifique de 20 pieds.",
         button: "Find out more",
+        image: emergency,
       },
       {
         title: "Cool Clim",
         text: "Des conteneurs frigorifiques ou des groupes électrogènes solaires efficaces en location à longue durée, en paiement cash ou paiements périodiques qui vont satisfaire tous vos besoins de conservation. ",
         button: "Find out more",
+        image: climSolution,
       },
       {
         title: "Cool Hangars",
         text: "Un Hangar solaire vous permet de stocker votre marchandise et de produire aussi de l’énergie pour vos propres besoins et même de la revendre. ",
         button: "Find out more",
+        image: shedsSolution,
       },
       {
         title: "Cool Bâtiments",
         text: "Nous construisons des greniers, des aires, des bâtiments de stockage avec une ventilation naturelle et autant que possible des matériaux locaux.",
         button: "Find out more",
+        image: buildingsImage,
       },
     ],
   },

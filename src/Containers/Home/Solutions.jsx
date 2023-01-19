@@ -1,9 +1,12 @@
 import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
+import { selectedLanguage } from "../../Context/LanguageSlice";
 
 const Solutions = () => {
   const { palette } = useTheme();
+  const { language } = useSelector(selectedLanguage);
   return (
     <Stack
       sx={{ background: palette.primary.main }}
@@ -16,27 +19,29 @@ const Solutions = () => {
         sx={{ marginTop: "15vh" }}
       >
         <Typography variant="h2" sx={{ color: palette.secondary.light }}>
-          Our solutions{" "}
+          {language.solution.title}
         </Typography>
-        <Typography sx={{ color: palette.secondary.light }}>
-          Innovation that powers green tech.
-        </Typography>
-        <SolutionContent inverse={true} />
-        <SolutionContent inverse={false} />
-        <SolutionContent inverse={true} />
-        <SolutionContent inverse={false} />
+        {language.solution.content.map((item, key) => {
+          return (
+            <SolutionContent
+              inverse={key % 2 === 0}
+              key={item.title}
+              {...item}
+            />
+          );
+        })}
       </Stack>
     </Stack>
   );
 };
 
-const SolutionContent = ({ inverse = false }) => {
+const SolutionContent = ({ inverse = false, image, title, text, button }) => {
   const { palette, width } = useTheme();
   return (
     <Stack
       direction={inverse === false ? "row" : "row-reverse"}
       justifyContent="space-between"
-      alignItems={"center"}
+      alignItems={"flex-start"}
       sx={{
         width: width,
         height: "530px",
@@ -44,19 +49,18 @@ const SolutionContent = ({ inverse = false }) => {
       }}
     >
       <Stack
-        sx={{ width: "53%", height: "100%" }}
-        alignItems={inverse === false ? 'flex-start' : "flex-end"}
+        sx={{ width: "48%", height: "100%" }}
+        alignItems={inverse === false ? "flex-start" : "flex-end"}
         justifyContent={"space-around"}
       >
         <Stack spacing={2}>
           <Typography variant="h4" sx={{ color: palette.secondary.light }}>
-            Cool Emergency Rental
+            {title}
           </Typography>
           <Typography
             sx={{ fontSize: "1.3rem", color: palette.secondary.light }}
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit quam
-            laboriosam, cum obcaecati eaque maiores.
+            {text}
           </Typography>
         </Stack>
         <Button
@@ -68,21 +72,21 @@ const SolutionContent = ({ inverse = false }) => {
             },
           }}
         >
-          Find Out more
+          {button}
         </Button>
       </Stack>
       <Stack
-        sx={{ width: "45%", height: "100%", }}
+        sx={{ width: "50%", height: "100%" }}
         justifyContent="center"
         alignItems="center"
       >
         <img
-          src=" https://picsum.photos/1000/1000"
+          src={image}
           alt="les information"
           style={{
             width: "100%",
-            maxHeight: "80%",
-            borderRadius:'40px'
+            height: "auto",
+            borderRadius: "40px",
           }}
         />
       </Stack>

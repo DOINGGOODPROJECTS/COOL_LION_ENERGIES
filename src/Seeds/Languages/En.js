@@ -3,6 +3,9 @@ import clim from "../../Assets/Imgs/clim.jpg";
 import meeting from "../../Assets/Imgs/meeting.jpg";
 import rental from "../../Assets/Imgs/rental.jpg";
 import sheds from "../../Assets/Imgs/sheds.jpg";
+import emergency from "../../Assets/Imgs/emergency.png";
+import climSolution from "../../Assets/Imgs/climSolution.jpg";
+import shedsSolution from "../../Assets/Imgs/shedsSolution.jpg";
 
 const EnglishContent = {
   appbar: {
@@ -62,26 +65,31 @@ const EnglishContent = {
         title: "Cool Emergency Rental",
         text: "Emergency rental of refrigerated storage on your site with our solar generators or our site in Djorogobité (Angré) where we provide a 20 feet refrigerated container.",
         button: "Find out more",
+        image: emergency,
       },
       {
         title: "Cool Clim",
         text: "Solar efficient refrigerated containers or solar generators for a long term rental, cash or periodic payments which will meet all your preservation needs.",
         button: "Find out more",
+        image: climSolution,
       },
       {
         title: "Cool Sheds",
         text: "A solar shed enables you to store your goods and also generate energy for your own needs and even for sale.",
         button: "Find out more",
+        image: shedsSolution,
       },
       {
         title: "Cool Buildings",
         text: "We build attics, bays, storage buildings with natural ventilation and as much as possible using local materials.",
         button: "Find out more",
+        image: buildingsImage,
       },
       {
         title: " Consulting & Support ",
         text: "We support you in your storage projects. From the conception of the project to the realization, we are at your service.",
         button: "Find out more",
+        image: meeting,
       },
     ],
   },
