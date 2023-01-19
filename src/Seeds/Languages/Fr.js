@@ -111,6 +111,13 @@ const FrenchContent = {
     },
     newsLetter: "Abonnez vous à notre newsletter",
   },
+  products: {
+    emergency: "Cool Urgence Location | Chambres froides solaires",
+    clim: "Cool Clim | Chambres froides solaires",
+    sheds: "Cool Hangars | Hangars solaires",
+    Buildings: "Cool Bâtiments | Bâtiments agricoles écologiques",
+    follow: "Conseil & Accompagnement",
+  },
 };
 
 export default FrenchContent;

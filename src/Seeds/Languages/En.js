@@ -98,7 +98,7 @@ const EnglishContent = {
     form: {
       firstName: "First name",
       lastName: "Last name",
-      organisation:"Name of your organization",
+      organisation: "Name of your organization",
       typeOfRequest: {
         title: "Type of request",
         content: [
@@ -117,12 +117,18 @@ const EnglishContent = {
     },
   },
   footer: {
-    partner:{
-      title:'Partner',
-      text:"Join us in the emergence",
-      button:'Apply now'
+    partner: {
+      title: "Partner",
+      text: "Join us in the emergence",
+      button: "Apply now",
     },
     newsLetter: "Subscribe to our newsletter",
+  },
+  products: {
+    emergency: "Cool Emergency Rental  | Solar - powered cold rooms",
+    clim: "Cool Clim | Solar - powered cold rooms",
+    sheds: "Cool Sheds  | Solar sheds",
+    Buildings: "Cool Buildings | Green farm buildings",
   },
 };
 

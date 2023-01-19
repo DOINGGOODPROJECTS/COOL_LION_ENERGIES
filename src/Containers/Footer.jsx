@@ -148,19 +148,23 @@ const Footer = () => {
               Title={ContentLanguage.appbar.navLink.product}
               Items={[
                 {
-                  title: ContentLanguage.appbar.navLink.about,
+                  title: ContentLanguage.products.emergency,
                   link: Routes.HomeRouteLink,
                 },
                 {
-                  title: ContentLanguage.solution.title,
+                  title: ContentLanguage.products.clim,
                   link: Routes.OurSolutionRouteLink,
                 },
                 {
-                  title: ContentLanguage.appbar.navLink.news,
+                  title: ContentLanguage.products.sheds,
                   link: Routes.NewsRouteLink,
                 },
                 {
-                  title: ContentLanguage.appbar.navLink.contact,
+                  title: ContentLanguage.products.follow,
+                  link: Routes.ContactRouteLink,
+                },
+                {
+                  title: ContentLanguage.products.buidlings,
                   link: Routes.ContactRouteLink,
                 },
               ]}
@@ -219,7 +223,10 @@ const Footer = () => {
               <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                 Follow Us
               </Typography>
-              <Redirect link={"https://www.twitter.com/coollionenergies"} target={true}>
+              <Redirect
+                link={"https://www.twitter.com/coollionenergies"}
+                target={true}
+              >
                 <IconButton size="medium" color="secondary" variant="contained">
                   <TwitterIcon
                     fontSize="medium"
@@ -303,7 +310,7 @@ const FooterItems = ({ Items }) => {
                 "&:hover": { textDecoration: "underline" },
                 textTransform: "capitalize",
                 cursor: "pointer",
-                maxWidth:'250px'
+                maxWidth: "250px",
               }}
             >
               {item.title}
