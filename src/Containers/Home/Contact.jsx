@@ -39,7 +39,7 @@ const Contact = ({ modale = false }) => {
         <Box
           sx={{
             background: palette.secondary.dark,
-            width: "65%",
+            width: { xs: "95%", md: "65%" },
             padding: modale === true ? "auto" : "35px 0",
             borderRadius: "10px",
             display: "flex",
@@ -52,7 +52,7 @@ const Contact = ({ modale = false }) => {
           <Typography variant="h3">{language.contact.title}</Typography>
 
           <Stack
-            direction={"row"}
+            direction={{ xs: "column", md: "row" }}
             justifyContent="space-around"
             alignItems={"center"}
             sx={{ width: "80%" }}
@@ -70,7 +70,7 @@ const Contact = ({ modale = false }) => {
             />
           </Stack>
           <Stack
-            direction={"row"}
+            direction={{ xs: "column", md: "row" }}
             justifyContent="space-around"
             alignItems={"center"}
             sx={{ width: "80%" }}
