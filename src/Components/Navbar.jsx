@@ -1,4 +1,12 @@
-import { AppBar, Button, IconButton, Stack, Toolbar } from "@mui/material";
+import {
+  AppBar,
+  Button,
+  IconButton,
+  Menu,
+  MenuItem,
+  Stack,
+  Toolbar,
+} from "@mui/material";
 import React from "react";
 import { useTheme } from "styled-components";
 import logoWithoutName from "../Assets/Icons/LogoWithName.svg";
@@ -13,6 +21,14 @@ import { selectedLanguage } from "../Context/LanguageSlice";
 const Navbar = () => {
   const { palette, width } = useTheme();
   const language = useSelector(selectedLanguage).language;
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <Stack
       className="Navbar"
@@ -83,9 +99,34 @@ const Navbar = () => {
                   {language.appbar.navLink.about}
                 </Button>
               </Redirect>
-              <Button sx={{ color: palette.secondary.main }}>
+              <Button
+                id="basic-button"
+                aria-controls={open ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+                sx={{ color: palette.secondary.main }}
+              >
                 {language.appbar.navLink.product}
               </Button>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                {Object.entries(language.products).map((items, key) => {
+                  const item = items[1];
+                  return (
+                    <Redirect link={item.link} key={key}>
+                      <MenuItem onClick={handleClose}>{item.title}</MenuItem>
+                    </Redirect>
+                  );
+                })}
+              </Menu>
               <Button sx={{ color: palette.secondary.main }}>
                 {" "}
                 {language.appbar.navLink.news}

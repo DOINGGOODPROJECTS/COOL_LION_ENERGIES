@@ -6,6 +6,7 @@ import sheds from "../../Assets/Imgs/sheds.jpg";
 import emergency from "../../Assets/Imgs/emergency.png";
 import climSolution from "../../Assets/Imgs/climSolution.jpg";
 import shedsSolution from "../../Assets/Imgs/shedsSolution.jpg";
+import Routes from "../../Router/Routes";
 
 const EnglishContent = {
   appbar: {
@@ -125,10 +126,22 @@ const EnglishContent = {
     newsLetter: "Subscribe to our newsletter",
   },
   products: {
-    emergency: "Cool Emergency Rental  | Solar - powered cold rooms",
-    clim: "Cool Clim | Solar - powered cold rooms",
-    sheds: "Cool Sheds  | Solar sheds",
-    Buildings: "Cool Buildings | Green farm buildings",
+    emergency: {
+      title: "Cool Emergency Rental  | Solar - powered cold rooms",
+      link: Routes.EmergencyRouteLink,
+    },
+    clim: {
+      title: "Cool Clim | Solar - powered cold rooms",
+      link: Routes.ClimRouteLink,
+    },
+    sheds: {
+      title: "Cool Sheds  | Solar sheds",
+      link: Routes.ShedsRouteLink,
+    },
+    buildings: {
+      title: "Cool Buildings | Green farm buildings",
+      link: Routes.BuildingsRouteLink,
+    },
   },
 };
 

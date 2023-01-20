@@ -5,6 +5,7 @@ import sheds from "../../Assets/Imgs/sheds.jpg";
 import emergency from "../../Assets/Imgs/emergency.png";
 import climSolution from "../../Assets/Imgs/climSolution.jpg";
 import shedsSolution from "../../Assets/Imgs/shedsSolution.jpg";
+import Routes from "../../Router/Routes";
 
 const FrenchContent = {
   appbar: {
@@ -112,11 +113,22 @@ const FrenchContent = {
     newsLetter: "Abonnez vous à notre newsletter",
   },
   products: {
-    emergency: "Cool Urgence Location | Chambres froides solaires",
-    clim: "Cool Clim | Chambres froides solaires",
-    sheds: "Cool Hangars | Hangars solaires",
-    Buildings: "Cool Bâtiments | Bâtiments agricoles écologiques",
-    follow: "Conseil & Accompagnement",
+    emergency: {
+      title: "Cool Urgence Location | Chambres froides solaires",
+      link: Routes.EmergencyRouteLink,
+    },
+    clim: {
+      title: "Cool Clim | Chambres froides solaires",
+      link: Routes.ClimRouteLink,
+    },
+    sheds: {
+      title: "Cool Bâtiments | Bâtiments agricoles écologiques",
+      link: Routes.ShedsRouteLink,
+    },
+    buildings: {
+      title: "Cool Buildings | Green farm buildings",
+      link: Routes.BuildingsRouteLink,
+    },
   },
 };
 

@@ -148,24 +148,20 @@ const Footer = () => {
               Title={ContentLanguage.appbar.navLink.product}
               Items={[
                 {
-                  title: ContentLanguage.products.emergency,
-                  link: Routes.HomeRouteLink,
+                  title: ContentLanguage.products.emergency.title,
+                  link: Routes.EmergencyRouteLink,
                 },
                 {
-                  title: ContentLanguage.products.clim,
-                  link: Routes.OurSolutionRouteLink,
+                  title: ContentLanguage.products.clim.title,
+                  link: Routes.ClimRouteLink,
                 },
                 {
-                  title: ContentLanguage.products.sheds,
-                  link: Routes.NewsRouteLink,
+                  title: ContentLanguage.products.sheds.title,
+                  link: Routes.ShedsRouteLink,
                 },
                 {
-                  title: ContentLanguage.products.follow,
-                  link: Routes.ContactRouteLink,
-                },
-                {
-                  title: ContentLanguage.products.buidlings,
-                  link: Routes.ContactRouteLink,
+                  title: ContentLanguage.products.buildings.title,
+                  link: Routes.BuildingsRouteLink,
                 },
               ]}
             />
@@ -302,9 +298,9 @@ const Footer = () => {
 const FooterItems = ({ Items }) => {
   return (
     <>
-      {Items.map((item) => {
+      {Items.map((item, key) => {
         return (
-          <Redirect link={item.link} key={item.link}>
+          <Redirect link={item.link} key={key}>
             <Typography
               sx={{
                 "&:hover": { textDecoration: "underline" },
