@@ -37,19 +37,21 @@ const Solutions = () => {
 
 const SolutionContent = ({ inverse = false, image, title, text, button }) => {
   const { palette, width } = useTheme();
+  const sens = inverse === false ? "row" : "row-reverse";
   return (
     <Stack
-      direction={inverse === false ? "row" : "row-reverse"}
+      direction={{ xs: "column-reverse", md: sens }}
       justifyContent="space-between"
-      alignItems={"flex-start"}
+      alignItems={{ xs: "center", md: "flex-start" }}
       sx={{
         width: width,
         height: "530px",
         padding: "15px 10px",
+        marginTop: { xs: "100px", md: "auto" },
       }}
     >
       <Stack
-        sx={{ width: "48%", height: "100%" }}
+        sx={{ width: { xs: "90%", md: "48%" }, height: "100%" }}
         alignItems={inverse === false ? "flex-start" : "flex-end"}
         justifyContent={"space-around"}
       >
@@ -76,7 +78,11 @@ const SolutionContent = ({ inverse = false, image, title, text, button }) => {
         </Button>
       </Stack>
       <Stack
-        sx={{ width: "50%", height: "100%" }}
+        sx={{
+          width: { xs: "90%", md: "50%" },
+          height: "100%",
+          marginBottom: { xs: "5vh", md: "auto" },
+        }}
         justifyContent="center"
         alignItems="center"
       >
