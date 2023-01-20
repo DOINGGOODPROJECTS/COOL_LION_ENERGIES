@@ -1,14 +1,15 @@
 import {
   Box,
-  Divider,
+  Button,
   IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Menu,
+  MenuItem,
   Stack,
-  useTheme,
 } from "@mui/material";
 import React from "react";
 import Redirect from "../Helpers/Redirect";
@@ -16,13 +17,33 @@ import Routes from "../Router/Routes";
 import ImageWithoutName from "../Assets/Icons/LogoWithoutName.svg";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
+import { useDispatch, useSelector } from "react-redux";
+import { selectedLanguage } from "../Context/LanguageSlice";
+import { useTheme } from "styled-components";
+import { changeState, selectedSidebar } from "../Context/SidebarSlice";
 
 const SidebarSlide = () => {
-  const { palette } = useTheme();
+  const { palette, width } = useTheme();
+  const language = useSelector(selectedLanguage).language;
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const sidebardState = useSelector(selectedSidebar).sidebard.status;
+  const dispatch = useDispatch();
+
+  const handleChange = React.useCallback(() => {
+    dispatch(changeState({ status: !sidebardState }));
+  });
+
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <Box
       sx={{
-        height:'100vh',
+        height: "100vh",
         width: "70vw",
         padding: "0 10px",
       }}
@@ -41,6 +62,7 @@ const SidebarSlide = () => {
               mr: 2,
               display: { sm: "none" },
             }}
+            onClick={handleChange}
           >
             <img
               src={ImageWithoutName}
@@ -50,29 +72,76 @@ const SidebarSlide = () => {
           </IconButton>
         </Redirect>
       </Stack>
-      <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-        <nav aria-label="main mailbox folders">
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
-              </ListItemButton>
-            </ListItem>
-
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <DraftsIcon />
-                </ListItemIcon>
-                <ListItemText primary="Drafts" />
-              </ListItemButton>
-            </ListItem>
-          </List>
-        </nav>
-      </Box>
+      <Stack
+        sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+        spacing={15}
+      >
+        <Stack justifyContent="center" alignItems={"center"} spacing={1}>
+          <Redirect link={Routes.HomeRouteLink}>
+            {" "}
+            <Button sx={{ color: palette.primary.main }} onClick={handleChange}>
+              {language.appbar.navLink.about}
+            </Button>
+          </Redirect>
+          <Button
+            id="basic-button"
+            aria-controls={open ? "basic-menu" : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? "true" : undefined}
+            onClick={handleClick}
+            sx={{ color: palette.primary.main }}
+          >
+            {language.appbar.navLink.product}
+          </Button>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+            sx={{ zIndex: 10000000000 }}
+          >
+            {Object.entries(language.products).map((items, key) => {
+              const item = items[1];
+              return (
+                <Redirect link={item.link} key={key}>
+                  <MenuItem onClick={handleClose}>{item.title}</MenuItem>
+                </Redirect>
+              );
+            })}
+          </Menu>
+          <Button sx={{ color: palette.primary.main }} onClick={handleChange}>
+            {" "}
+            {language.appbar.navLink.news}
+          </Button>
+          <Redirect link={Routes.ContactRouteLink}>
+            <Button sx={{ color: palette.primary.main }} onClick={handleChange}>
+              {" "}
+              {language.appbar.navLink.contact}
+            </Button>
+          </Redirect>
+        </Stack>
+        <Stack>
+          <Button
+            size="large"
+            variant="contained"
+            sx={{
+              background: palette.primary.main,
+              color: palette.secondary.main,
+              "&:hover": {
+                background: palette.primary.main,
+                color: palette.primary.dark,
+              },
+            }}
+            onClick={handleChange}
+          >
+            {" "}
+            {language.appbar.button}
+          </Button>
+        </Stack>
+      </Stack>
     </Box>
   );
 };

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const SidebarSlice = createSlice({
   name: "sidebar",
-  initialState: { status: true },
+  initialState: { status: false },
   reducers: {
     changeState(state, action) {
       state.status = action.payload.status;
