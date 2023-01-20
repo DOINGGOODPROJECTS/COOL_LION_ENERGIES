@@ -1,33 +1,15 @@
-import {
-  Box,
-  Button,
-  Divider,
-  IconButton,
-  MenuItem,
-  Select,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Divider, IconButton, TextField, Typography } from "@mui/material";
 import React from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "styled-components";
-import { Stack } from "@mui/system";
-import { useDispatch, useSelector } from "react-redux";
-import { changeLanguage, selectedLanguage } from "../Context/LanguageSlice";
+import { useSelector } from "react-redux";
+import { selectedLanguage } from "../Context/LanguageSlice";
 import Routes from "../Router/Routes";
 import Redirect from "../Helpers/Redirect";
+import LanguageApp from "../Components/LanguageApp";
 const Footer = () => {
   const { palette, width } = useTheme();
-  const [language, setLanguage] = React.useState("english");
-  const dispatch = useDispatch();
   const ContentLanguage = useSelector(selectedLanguage).language;
-  const handleLanguage = React.useCallback(
-    (event) => {
-      setLanguage(event.target.value);
-      dispatch(changeLanguage(event.target.value));
-    },
-    [dispatch]
-  );
   return (
     <Box
       sx={{
@@ -245,38 +227,7 @@ const Footer = () => {
                 flexWrap: "wrap",
               }}
             >
-              <Select
-                size="small"
-                sx={{
-                  width: "150px",
-                  marginBottom: "10px",
-                  borderColor: palette.secondary.light,
-                  background: palette.secondary.light,
-                }}
-                value={language}
-                onChange={handleLanguage}
-              >
-                <MenuItem value="english">
-                  <Stack direction="row" spacing={2}>
-                    <img
-                      src="https://flagcdn.com/us.svg"
-                      alt="english"
-                      style={{ width: "30px", height: "20px" }}
-                    />
-                    <Typography>English</Typography>
-                  </Stack>
-                </MenuItem>
-                <MenuItem value="french">
-                  <Stack direction="row" spacing={2}>
-                    <img
-                      src="https://flagcdn.com/fr.svg"
-                      alt="Français"
-                      style={{ width: "30px", height: "20px" }}
-                    />
-                    <Typography>Français</Typography>
-                  </Stack>
-                </MenuItem>
-              </Select>
+              <LanguageApp />
             </Box>
           </Box>
           <Divider color={palette.secondary.main} />
@@ -303,7 +254,7 @@ const FooterItems = ({ Items }) => {
     <>
       {Items.map((item, key) => {
         return (
-          <Redirect link={item.link} key={key}>
+          <Redirect link={item.link} key={item.link}>
             <Typography
               sx={{
                 "&:hover": { textDecoration: "underline" },

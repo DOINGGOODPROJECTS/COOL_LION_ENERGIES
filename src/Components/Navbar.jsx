@@ -16,6 +16,7 @@ import Routes from "../Router/Routes";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedLanguage } from "../Context/LanguageSlice";
 import { changeState, selectedSidebar } from "../Context/SidebarSlice";
+import LanguageApp from "./LanguageApp";
 
 const Navbar = () => {
   const { palette, width } = useTheme();
@@ -169,6 +170,8 @@ const Navbar = () => {
                 </Button>
               </a>
             </Stack>
+
+            <LanguageApp small={true} />
           </Stack>
         </Toolbar>
       </AppBar>
