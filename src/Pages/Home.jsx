@@ -14,7 +14,6 @@ import { selectedLanguage } from "../Context/LanguageSlice";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-
 const Home = () => {
   const language = useSelector(selectedLanguage).language;
   const { width } = useTheme();
@@ -25,7 +24,7 @@ const Home = () => {
         {language.home.map((item, key) => {
           return (
             <Stack
-              justifyConten="center"
+              justifyContent="center"
               alignItems="center"
               sx={{ width: width }}
               key={item.title}

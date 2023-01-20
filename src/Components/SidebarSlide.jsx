@@ -92,9 +92,11 @@ const SidebarSlide = () => {
             {Object.entries(language.products).map((items, key) => {
               const item = items[1];
               return (
-                <Redirect link={item.link} key={key}>
-                  <MenuItem onClick={handleClose}>{item.title}</MenuItem>
-                </Redirect>
+                key >= 1 && (
+                  <Redirect link={item.link} key={items.title}>
+                    <MenuItem onClick={handleClose}>{item.title}</MenuItem>
+                  </Redirect>
+                )
               );
             })}
           </Menu>

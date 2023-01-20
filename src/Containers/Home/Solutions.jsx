@@ -125,8 +125,9 @@ const SolutionContent = ({
           src={image}
           alt="les information"
           style={{
-            width: "100%",
-            height: "auto",
+            width: "auto",
+            maxWidth:"100%",
+            maxHeight:"400px",
             borderRadius: "40px",
           }}
         />

@@ -15,7 +15,7 @@ export const SliderContent = ({ title, text, button, image, link }) => {
       alignItems={"center"}
       spacing={2}
       sx={{
-        width: "90%",
+        width: "80%",
         height: "530px",
         padding: "15px 10px",
       }}
@@ -64,7 +64,7 @@ export const SliderContent = ({ title, text, button, image, link }) => {
         </Box>
       </Stack>
       <Stack
-        sx={{ width: { xs: "100%", md: "40%" }, height: "100%" }}
+        sx={{ width: { xs: "100%", md: "50%" }, height: "100%" }}
         justifyContent="center"
         alignItems="center"
       >

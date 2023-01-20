@@ -21,28 +21,35 @@ const ContactPage = () => {
   const { language } = useSelector(selectedLanguage);
   return (
     <Stack justifyContent={"center"} alignItems="center">
-      <Box sx={{ height: "auto", width: "100%", position: "relative" }}>
+      <Box
+        sx={{
+          height: { xs: "200px", md: "auto" },
+          width: "100%",
+          position: "relative",
+        }}
+      >
         <img
           src={contact}
           alt="contactImage"
           style={{ height: "100%", width: "100%" }}
         />
         <Typography
-          variant="h2"
+          variant="h4"
           sx={{
             position: "absolute",
-            top: "50%",
-            left: "50%",
+            top: { xs: "50%", md: "50%" },
+            left: { xs: "80%", md: "50%" },
             transform: "translate(-50%, -50%)",
             color: "white",
+            width: "100%",
           }}
         >
           {language.contact.title}
         </Typography>
       </Box>
       <Stack
-        sx={{ width: width, marginTop: "10vh",marginBottom:"5vh" }}
-        direction="row"
+        sx={{ width: width, marginTop: "10vh", marginBottom: "5vh" }}
+        direction={{ xs: "column", md: "row" }}
         spacing={2}
         justifyContent="space-between"
         alignItems={"flex-start"}
@@ -52,7 +59,7 @@ const ContactPage = () => {
             border: "1px solid",
             borderColor: palette.primary.main,
             borderRadius: "10px",
-            width: "45%",
+            width: { xs: "95%", md: "45%" },
           }}
         >
           <List>
@@ -78,7 +85,7 @@ const ContactPage = () => {
             </ListItem>
           </List>
         </Box>
-        <Box sx={{ width: "50%", height: "300px" }}>
+        <Box sx={{ width: { xs: "95%", md: "50%" }, height: "300px" }}>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3972.1491642187493!2d-3.9248939999999997!3d5.394229!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc7ab777333c2e665!2zNcKwMjMnMzguMCJOIDPCsDU1JzMwLjAiVw!5e0!3m2!1sen!2sus!4v1674206444957!5m2!1sen!2sus"
             width="100%"
@@ -87,11 +94,11 @@ const ContactPage = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title='le localisation'
+            title="le localisation"
           ></iframe>
         </Box>
       </Stack>
-      <Contact/>
+      <Contact />
     </Stack>
   );
 };
