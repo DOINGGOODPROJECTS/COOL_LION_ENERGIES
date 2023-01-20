@@ -25,7 +25,7 @@ const Products = ({ path }) => {
         >
           {content.title}
         </Typography>
-        <Typography
+        {/* <Typography
           variant="h2"
           sx={{
             color: palette.primary.main,
@@ -34,7 +34,7 @@ const Products = ({ path }) => {
           className="productTitle"
         >
           {content.title}
-        </Typography>
+        </Typography> */}
       </Box>
       <Stack justifyContent={"center"} alignItems="center">
         <img src={content.image} alt={content.title} style={{ width: "80%" }} />
@@ -51,7 +51,7 @@ const Products = ({ path }) => {
         <Stack spacing={2} sx={{ paddingTop: "0vh", paddingBottom: "10vh" }}>
           <Typography
             variant="h4"
-            sx={{ color: palette.primary.main, textAlign: "center" }}
+            sx={{ color: palette.primary.main, textAlign: "center",marginBottom:'5vh' }}
           >
             {content?.choose?.title}
           </Typography>

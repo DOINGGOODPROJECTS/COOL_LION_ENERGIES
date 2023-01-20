@@ -5,6 +5,7 @@ import {
   IconButton,
   MenuItem,
   Select,
+  TextField,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -125,6 +126,7 @@ const Footer = () => {
                 {
                   title: "client@coollionenergies.com",
                   link: Routes.NewsRouteLink,
+                  noCap: true,
                 },
               ]}
             />
@@ -181,18 +183,19 @@ const Footer = () => {
               {ContentLanguage.footer.partner.title}
             </Typography>
             <Typography sx={{ color: palette.secondary.light }}>
-              {ContentLanguage.footer.partner.text}
+              {ContentLanguage.footer.newsLetter}
             </Typography>
-            <Button
-              fontSize="medium"
+
+            <TextField
               sx={{
-                color: palette.primary.main,
+                marginTop: "10px",
+                borderColor: palette.secondary.light,
                 background: palette.secondary.light,
+                color: palette.primary.main,
+                outline: "none",
+                border: "none",
               }}
-              variant="contained"
-            >
-              {ContentLanguage.footer.partner.button}
-            </Button>
+            />
           </Box>
         </Box>
 
@@ -217,7 +220,7 @@ const Footer = () => {
               }}
             >
               <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                Follow Us
+                {ContentLanguage.footer.follow}
               </Typography>
               <Redirect
                 link={"https://www.twitter.com/coollionenergies"}
@@ -286,7 +289,7 @@ const Footer = () => {
             }}
           >
             <Typography sx={{ fontSize: "0.8em", margin: "10px 0 10px 0" }}>
-              © 2023- 2024 Cool Lion Energies ®.
+              © Cool Lion Energies ®.
             </Typography>
           </Box>
         </Box>
@@ -304,7 +307,7 @@ const FooterItems = ({ Items }) => {
             <Typography
               sx={{
                 "&:hover": { textDecoration: "underline" },
-                textTransform: "capitalize",
+                textTransform: item?.noCap === false ? "capitalize" : "none",
                 cursor: "pointer",
                 maxWidth: "250px",
               }}

@@ -22,36 +22,45 @@ const FrenchContent = {
     {
       title: "Cool Urgence Location ",
       text: "Location en urgence de stockage frigorifique sur votre site ou notre site",
-      button: "Learn more",
+      button: "Découvrir",
       image: rental,
+      link: Routes.EmergencyRouteLink,
     },
     {
-      title: "Cool Clim - Froid solaire mobile",
+      title: "Cool Clim : Froid solaire mobile",
       text: " Des conteneurs frigorifiques ou des groupes électrogènes solaires efficaces",
-      button: "Learn more",
+      button: "Découvrir",
       image: clim,
+      link: Routes.ClimRouteLink,
     },
     {
-      title: "Cool Hangars - Hangars solaires ",
+      title: "Cool Hangars:  Hangars solaires ",
       text: "Des hangars modernes pour votre stockage ",
-      button: "Learn more",
+      button: "Découvrir",
       image: sheds,
+      link: Routes.ShedsRouteLink,
     },
     {
-      title: "Cool Bâtiments - Bâtiments écologiques ",
+      title: "Cool Bâtiments : Bâtiments écologiques ",
       text: " Des bâtiments écologiques et modernes pour tous vos besoins ",
-      button: "Learn more",
+      button: "Découvrir",
       image: buildingsImage,
+      link: Routes.BuildingsRouteLink,
     },
   ],
   partner: {
     title: "Votre Partenaire Idéal",
-    text: "COOL LION ENERGIES est le spécialiste en Côte d’Ivoire dans la construction, l'assemblage et la mise à disposition d’infrastructures de stockage et de stockage frigorifique par énergie propre. Nos solutions accompagnent tous les secteurs, en particulier l’agriculture, l’agroalimentaire, les industries et le commerce.",
+    text: "COOL LION ENERGIES est le spécialiste en Côte d’Ivoire dans la construction, l'assemblage et la mise à disposition d’infrastructures de stockage et de stockage frigorifique par énergie propre.  ",
+    secondText:
+      "Nos solutions accompagnent tous les secteurs, en particulier l’agriculture, l’agroalimentaire, les industries et le commerce.",
     subTitle:
       "Nos solutions ont été primées comme la meilleure innovation de petites infrastructures par l’Agence pour le Développement de l’Union Africaine. ",
   },
   video: {
-    text: "Texte en bas: Nous préservons ce qui est précieux pour vous.",
+    text: "Nous préservons ce qui est précieux pour vous.",
+  },
+  news: {
+    title: "Cool Lion Energies dans la presse",
   },
   solution: {
     title: "Nos solutions",
@@ -59,26 +68,30 @@ const FrenchContent = {
       {
         title: "Cool Urgence Location",
         text: "Location en urgence de stockage frigorifique sur votre site avec nos groupes électrogènes solaires ou notre site à Djorogobité (Angré) où nous mettons à disposition un conteneur frigorifique de 20 pieds.",
-        button: "Find out more",
+        button: "Je découvre",
         image: emergency,
+        link: Routes.EmergencyRouteLink,
       },
       {
         title: "Cool Clim",
         text: "Des conteneurs frigorifiques ou des groupes électrogènes solaires efficaces en location à longue durée, en paiement cash ou paiements périodiques qui vont satisfaire tous vos besoins de conservation. ",
-        button: "Find out more",
+        button: "Je découvre",
         image: climSolution,
+        link: Routes.ClimRouteLink,
       },
       {
         title: "Cool Hangars",
         text: "Un Hangar solaire vous permet de stocker votre marchandise et de produire aussi de l’énergie pour vos propres besoins et même de la revendre. ",
-        button: "Find out more",
+        button: "Je découvre",
         image: shedsSolution,
+        link: Routes.ShedsRouteLink,
       },
       {
         title: "Cool Bâtiments",
         text: "Nous construisons des greniers, des aires, des bâtiments de stockage avec une ventilation naturelle et autant que possible des matériaux locaux.",
-        button: "Find out more",
+        button: "Je découvre",
         image: buildingsImage,
+        link: Routes.BuildingsRouteLink,
       },
     ],
   },
@@ -95,7 +108,7 @@ const FrenchContent = {
           "Cool Clim",
           "Cool Hangar",
           "Cool Bâtiments",
-          "Conseil & Accompagnemen",
+          "Conseil & Accompagnement",
         ],
       },
       country: "Votre Pays",
@@ -107,11 +120,12 @@ const FrenchContent = {
   },
   footer: {
     partner: {
-      title: "Partenaire",
+      title: "Newsletter",
       text: "Rejoignez-nous dans l'émergence",
       button: "Postulez dès maintenant",
     },
     newsLetter: "Abonnez vous à notre newsletter",
+    follow: "Nous suivre",
   },
   products: {
     button: ["DEMANDEZ UN DEVIS", "FORMULAIRE CONTACT"],
@@ -119,7 +133,7 @@ const FrenchContent = {
       title: "Cool Urgence Location | Chambres froides solaires",
       link: Routes.EmergencyRouteLink,
       image: emergency,
-      text: "La location 'un stockage frigorifique est la solution idéale pour faire face aux imprévus (urgence, panne…), pallier un manque de capacité temporaire, la rénovation ou la révision de votre propre stockage frigorifique.Sur votre site, nous sommes en mesure de déplacer des groupes électrogènes de réfrigération solaire, autonomes qui peuvent être joints à vos bâtiments ou toute infrastructure de stockage pour les louer sur une période fixe.En outre, nous disposons d’un conteneur frigorifique solaire de 20 pieds à température positive sur notre site à Djorogobité (Angré) susceptible d’accueillir votre marchandise à tout moment. ",
+      text: "La location d'un stockage frigorifique est la solution idéale pour faire face aux imprévus (urgence, panne…), palier un manque de capacité temporaire, la rénovation ou la révision de votre propre stockage frigorifique. Sur votre site, nous sommes en mesure de déplacer des groupes électrogènes de réfrigération solaire, autonomes qui peuvent être joints à vos bâtiments ou toute infrastructure de stockage pour les louer sur une période fixe. En outre, nous disposons d’un conteneur frigorifique solaire de 20 pieds à température positive sur notre site à Djorogobité (Angré) susceptible d’accueillir votre marchandise à tout moment. ",
       subTitle: "",
       choose: {
         title: "Vous avez donc deux possibilités",
@@ -140,6 +154,7 @@ const FrenchContent = {
     sheds: {
       title: "Cool Hangars | Hangars solaires ",
       link: Routes.ShedsRouteLink,
+      image: sheds,
       text: "Quel que soit votre besoin (bâtiment de stockage, bâtiment d’élevage, parking…) et votre activité, un bâtiment photovoltaïque a de nombreux avantages.",
       subTitle:
         "Il vous permet de stocker votre marchandise et de produire aussi de l’énergie pour vos propres besoins et même de la revendre.",
@@ -147,7 +162,8 @@ const FrenchContent = {
     buildings: {
       title: "Cool Bâtiments | Bâtiments agricoles écologiques ",
       link: Routes.BuildingsRouteLink,
-      text: "Solution bien indiquée pour l'élevage et l’agriculture: les productions vivrières sans besoin de réfrigération (riz, maïs, soja, igname etc) qui ont besoin de conservation ambiante et à l’abri des rongeurs nuisibles – nous avons réinventer pour vous le traditionnel grenier ou le hangar de fortune de collecte groupée.",
+      image: buildingsImage,
+      text: "Solution bien indiquée pour l'élevage et l’agriculture: les productions vivrières sans besoin de réfrigération (riz, maïs, soja, igname etc) ont besoin de conservation ambiante et à l’abri des rongeurs nuisibles – nous avons réinventer pour vous le traditionnel grenier ou le hangar de fortune de collecte groupée.",
       subTitle:
         "Nous proposons la construction de bâtiments à ventilation naturelle, écologiques qui utilisent  notamment des matériaux locaux tels que la brique de terre compressée etc.Nos designs sont à coût modéré, visuellement plaisants et embellissent le cadre de vie rural en transformant vos bâtiments en des lieux de vie.",
     },

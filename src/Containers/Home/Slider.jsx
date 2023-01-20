@@ -5,6 +5,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useTheme } from "styled-components";
 import { useSelector } from "react-redux";
 import { selectedLanguage } from "../../Context/LanguageSlice";
+import Redirect from "../../Helpers/Redirect";
 
 const Slider = () => {
   const [sliderState, setSliderState] = React.useState(0);
@@ -57,7 +58,7 @@ const Slider = () => {
     </Stack>
   );
 };
-const SliderContent = ({ title, text, button, image }) => {
+const SliderContent = ({ title, text, button, image, link }) => {
   const { palette } = useTheme();
   return (
     <Stack
@@ -71,7 +72,11 @@ const SliderContent = ({ title, text, button, image }) => {
       }}
     >
       <Stack
-        sx={{ width: { sm: "100%", md: "42%" }, height: "100%",marginBottom:{xs:'20px',md:"0"} }}
+        sx={{
+          width: { sm: "100%", md: "42%" },
+          height: "100%",
+          marginBottom: { xs: "20px", md: "0" },
+        }}
         alignItems="flex-start"
         justifyContent={"space-around"}
       >
@@ -85,16 +90,19 @@ const SliderContent = ({ title, text, button, image }) => {
         </Typography>
         <Box>
           <Typography variant="h6">{text}</Typography>
-          <Button
-            variant="outlined"
-            sx={{
-              borderColor: palette.primary.main,
-              color: palette.primary.main,
-              marginTop: "15px",
-            }}
-          >
-            {button}
-          </Button>
+          <Redirect link={link}>
+            <Button
+              variant="outlined"
+              sx={{
+                borderColor: palette.primary.main,
+                color: palette.primary.main,
+                marginTop: "15px",
+              }}
+              
+            >
+              {button}
+            </Button>
+          </Redirect>
         </Box>
       </Stack>
       <Stack

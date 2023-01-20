@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import { selectedLanguage } from "../../Context/LanguageSlice";
+import Redirect from "../../Helpers/Redirect";
 
 const Solutions = () => {
   const { palette } = useTheme();
@@ -35,7 +36,14 @@ const Solutions = () => {
   );
 };
 
-const SolutionContent = ({ inverse = false, image, title, text, button }) => {
+const SolutionContent = ({
+  inverse = false,
+  image,
+  title,
+  text,
+  button,
+  link,
+}) => {
   const { palette, width } = useTheme();
   const sens = inverse === false ? "row" : "row-reverse";
   return (
@@ -56,26 +64,38 @@ const SolutionContent = ({ inverse = false, image, title, text, button }) => {
         justifyContent={"space-around"}
       >
         <Stack spacing={2}>
-          <Typography variant="h4" sx={{ color: palette.secondary.light }}>
+          <Typography
+            variant="h4"
+            sx={{
+              color: palette.secondary.light,
+              textAlign: { xs: "center", md: "inherit" },
+            }}
+          >
             {title}
           </Typography>
           <Typography
-            sx={{ fontSize: "1.3rem", color: palette.secondary.light }}
+            sx={{
+              fontSize: "1.3rem",
+              color: palette.secondary.light,
+              textAlign: { xs: "center", md: "inherit" },
+            }}
           >
             {text}
           </Typography>
         </Stack>
-        <Button
-          sx={{
-            background: palette.secondary.light,
-            color: palette.primary.main,
-            "&:hover": {
-              background: palette.secondary.main,
-            },
-          }}
-        >
-          {button}
-        </Button>
+        <Redirect link={link}>
+          <Button
+            sx={{
+              background: palette.secondary.light,
+              color: palette.primary.main,
+              "&:hover": {
+                background: palette.secondary.main,
+              },
+            }}
+          >
+            {button}
+          </Button>
+        </Redirect>
       </Stack>
       <Stack
         sx={{

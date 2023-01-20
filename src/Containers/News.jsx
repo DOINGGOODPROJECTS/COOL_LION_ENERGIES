@@ -4,9 +4,12 @@ import educarriereImg from "../Assets/Icons/educarriere.png";
 import ClimateImg from "../Assets/Icons/Climate.png";
 import raconteurImg from "../Assets/Icons/raconteur.png";
 import Redirect from "../Helpers/Redirect";
+import { useSelector } from "react-redux";
+import { selectedLanguage } from "../Context/LanguageSlice";
 
 const News = () => {
   const { width } = useTheme();
+  const { language } = useSelector(selectedLanguage);
   return (
     <Stack
       sx={{ width: "100%", margin: "auto" }}
@@ -14,13 +17,15 @@ const News = () => {
       alignItems={"center"}
       spacing={5}
     >
-      <Typography variant="h3">Cool Lion Energies inw the news</Typography>
+      <Typography variant="h3" sx={{ textAlign: "center" }}>
+        {language.news.title}
+      </Typography>
       <Stack
         direction={"row"}
         justifyContent="space-between"
         alignItems={"center"}
-        sx={{ width: width }}
-        spacing={15}
+        sx={{ width: width, flexWrap: "wrap" }}
+        spacing={{ xs: 5, md: 15 }}
       >
         <Redirect
           target={true}
