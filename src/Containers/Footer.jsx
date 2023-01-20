@@ -163,6 +163,10 @@ const Footer = () => {
                   title: ContentLanguage.products.buildings.title,
                   link: Routes.BuildingsRouteLink,
                 },
+                {
+                  title: ContentLanguage.products.support.title,
+                  link: Routes.SupportRouteLink,
+                },
               ]}
             />
           </Box>

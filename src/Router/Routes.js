@@ -9,7 +9,8 @@ const Routes = {
   EmergencyRouteLink: "/products/emergency",
   ClimRouteLink: "/products/clim",
   ShedsRouteLink: "/products/sheds",
-  BuildingsRouteLink: "/products/Buildings",
+  BuildingsRouteLink: "/products/buildings",
+  SupportRouteLink: "/products/support",
 };
 
 export default Routes;

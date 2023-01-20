@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import About from "../Pages/About";
 import Errors from "../Pages/Errors";
 import Home from "../Pages/Home";
 import Products from "../Pages/Products";
@@ -21,26 +20,24 @@ const Router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: Routes.ProductRouteLink,
-        element: <Products />,
-        children: [
-          {
-            path: Routes.EmergencyRouteLink,
-            element: <Products />,
-          },
-          {
-            path: Routes.ClimRouteLink,
-            element: <Products />,
-          },
-          {
-            path: Routes.ShedsRouteLink,
-            element: <Products />,
-          },
-          {
-            path: Routes.BuildingsRouteLink,
-            element: <Products />,
-          },
-        ],
+        path: Routes.EmergencyRouteLink,
+        element: <Products path="emergency" />,
+      },
+      {
+        path: Routes.ClimRouteLink,
+        element: <Products path="clim" />,
+      },
+      {
+        path: Routes.ShedsRouteLink,
+        element: <Products path="sheds" />,
+      },
+      {
+        path: Routes.BuildingsRouteLink,
+        element: <Products path="buildings" />,
+      },
+      {
+        path: Routes.SupportRouteLink,
+        element: <Products path={"support"} />,
       },
     ],
   },

@@ -126,21 +126,45 @@ const EnglishContent = {
     newsLetter: "Subscribe to our newsletter",
   },
   products: {
+    button: ["ASK FOR A QUOTE", " CONTACT FORM"],
     emergency: {
-      title: "Cool Emergency Rental  | Solar - powered cold rooms",
+      title: "Cool Emergency Rental",
       link: Routes.EmergencyRouteLink,
+      image: emergency,
+      text: "The rental of a refrigerated storage is the ideal solution to face unexpected situations (emergency, breakdown...), mitigate a temporary lack of capacity, also renovation or maintenance of your own refrigerated storage.On your site, we are able to move autonomous solar refrigeration generators that can be attached to your buildings or any storage infrastructure to rent them for a fixed period. In addition, we have a 20 feet solar refrigerated container with positive temperature on our site in Djorogobité (Angré) that can store your goods at any time. ",
+      subTitle: "",
     },
     clim: {
-      title: "Cool Clim | Solar - powered cold rooms",
+      title: "Cool Clim ",
       link: Routes.ClimRouteLink,
+      image: clim,
+      text: "We have refrigerated containers which are 100%  powered by solar energy, by regular energy, or even hybrid   (several sources of cross power) with different sizes (10, 20 and 40 feet for an average storage capacity of 6, 20 and 29 tons). For fishing products, we refer to a negative cold room (between -18°C and -30°C) and for agriculture and  food industry, we refer to a positive cold room (between +2°C and +16°C). The conservation of your products is thus extended from 2 weeks to 1 year.The containers are assembled locally from imported prefabricated panels with various characteristics of being removable, quickly deployed and space-saving.",
+      subTitle:
+        "We offer flexible payment solutions such as installment and pay-as-you-go. ",
     },
     sheds: {
-      title: "Cool Sheds  | Solar sheds",
+      title: "Cool Sheds",
       link: Routes.ShedsRouteLink,
+      image: sheds,
+      text: "Regardless of your needs (storage building, livestock building, parking lot...) and your activity, a photovoltaic building has many advantages.",
+      subTitle:
+        "It allows you to store your goods and also generate energy for your own need and even for sale.",
     },
     buildings: {
-      title: "Cool Buildings | Green farm buildings",
+      title: "Cool Buildings",
       link: Routes.BuildingsRouteLink,
+      image: buildingsImage,
+      text: "A solution well suited for livestock and agriculture: food crops without need of refrigeration (rice, corn, soybeans, yams, etc.) that need to be stored at room temperature and free from pests - we have reinvented for you the traditional granary or makeshift shed for grouped collection.",
+      subTitle:
+        "We offer naturally ventilated, environmentally friendly buildings that use local materials such as compressed mud bricks etc.Our designs are low cost, visually attractive and enhance the rural environment by transforming your buildings into living spaces.",
+    },
+    support: {
+      title: "Consulting & Support ",
+      link: Routes.SupportRouteLink,
+      image: meeting,
+      text: "You have a project related to storage and cold storage?",
+      subTitle:
+        "We support you with your research, consulting or even for the end-to-end realization of your projec",
     },
   },
 };
