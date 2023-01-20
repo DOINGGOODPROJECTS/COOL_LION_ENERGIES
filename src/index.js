@@ -3,11 +3,20 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import Router from "./Router/Router";
+import { ThemeProvider } from "styled-components";
+import Theme from "./Themes/Theme";
+import { Provider } from "react-redux";
+import store from "./App/store";
+import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={Router} />
+    <ThemeProvider theme={Theme}>
+      <Provider store={store}>
+        <RouterProvider router={Router} />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
