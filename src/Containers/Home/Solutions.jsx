@@ -19,7 +19,10 @@ const Solutions = () => {
         alignItems={"center"}
         sx={{ marginTop: "15vh" }}
       >
-        <Typography variant="h2" sx={{ color: palette.secondary.light }}>
+        <Typography
+          variant="h2"
+          sx={{ color: palette.secondary.light, textAlign: "center" }}
+        >
           {language.solution.title}
         </Typography>
         {language.solution.content.map((item, key) => {
@@ -83,19 +86,31 @@ const SolutionContent = ({
             {text}
           </Typography>
         </Stack>
-        <Redirect link={link}>
-          <Button
-            sx={{
-              background: palette.secondary.light,
-              color: palette.primary.main,
-              "&:hover": {
-                background: palette.secondary.main,
-              },
-            }}
-          >
-            {button}
-          </Button>
-        </Redirect>
+        <Stack
+          sx={{
+            width: "100%",
+            direction: "row",
+            justifyContent: { xs: "center", md: "flex-start" },
+            alignItems: { xs: "center", md: "flex-start" },
+            marginTop: { xs: "10px", md: "auto" },
+            transform:{xs:'none',md:'translate(0px,-100px)'}
+          }}
+        >
+          <Redirect link={link}>
+            <Button
+              sx={{
+                background: palette.secondary.light,
+                color: palette.primary.main,
+                "&:hover": {
+                  background: palette.secondary.main,
+                },
+                width: { xs: "80vw", md: "auto" },
+              }}
+            >
+              {button}
+            </Button>
+          </Redirect>
+        </Stack>
       </Stack>
       <Stack
         sx={{
