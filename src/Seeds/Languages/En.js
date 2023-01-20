@@ -133,6 +133,13 @@ const EnglishContent = {
       image: emergency,
       text: "The rental of a refrigerated storage is the ideal solution to face unexpected situations (emergency, breakdown...), mitigate a temporary lack of capacity, also renovation or maintenance of your own refrigerated storage.On your site, we are able to move autonomous solar refrigeration generators that can be attached to your buildings or any storage infrastructure to rent them for a fixed period. In addition, we have a 20 feet solar refrigerated container with positive temperature on our site in Djorogobité (Angré) that can store your goods at any time. ",
       subTitle: "",
+      choose: {
+        title: "You have two possibilities",
+        case: [
+          "Rent storage space inside our containers for the conservation of your products over a fixed period",
+          "Deploy solar cooling generators on your site for rental following a given period of time.",
+        ],
+      },
     },
     clim: {
       title: "Cool Clim ",
@@ -164,7 +171,7 @@ const EnglishContent = {
       image: meeting,
       text: "You have a project related to storage and cold storage?",
       subTitle:
-        "We support you with your research, consulting or even for the end-to-end realization of your projec",
+        "We support you with your research, consulting or even for the end-to-end realization of your project",
     },
   },
 };
