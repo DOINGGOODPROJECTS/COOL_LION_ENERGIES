@@ -20,6 +20,17 @@ const Products = ({ path }) => {
           sx={{
             color: palette.primary.main,
             textAlign: "center",
+            display: { xs: "none", md: "block" },
+          }}
+        >
+          {content.title}
+        </Typography>
+        <Typography
+          variant="h4"
+          sx={{
+            color: palette.primary.main,
+            textAlign: "center",
+            display: { xs: "block", md: "none" },
           }}
         >
           {content.title}
@@ -38,13 +49,30 @@ const Products = ({ path }) => {
       <Stack justifyContent={"center"} alignItems="center">
         <img src={content.image} alt={content.title} style={{ width: "80%" }} />
       </Stack>
-      <Stack justifyContent={"center"} alignItems="flex-start" spacing={2}>
+      <Stack
+        justifyContent={"center"}
+        alignItems="flex-start"
+        spacing={2}
+        sx={{ display: { xs: "none", md: "flex" } }}
+      >
         <Typography variant="h6" sx={{ textAlign: "justify", width: "100%" }}>
           {content.text}
         </Typography>
         <Typography variant="h6" sx={{ textAlign: "start" }}>
           {content.subTitle}
         </Typography>
+      </Stack>
+
+      <Stack
+        justifyContent={"center"}
+        alignItems="center"
+        spacing={2}
+        sx={{ display: { xs: "flex", md: "none" } }}
+      >
+        <Typography sx={{ textAlign: "justify", width: "95%" }}>
+          {content.text}
+        </Typography>
+        <Typography sx={{ textAlign: "start" }}>{content.subTitle}</Typography>
       </Stack>
       {content?.choose !== undefined && (
         <Stack spacing={2} sx={{ paddingTop: "0vh", paddingBottom: "5vh" }}>
@@ -59,12 +87,16 @@ const Products = ({ path }) => {
             {content?.choose?.title}
           </Typography>
           <Stack
-            direction={"row"}
+            direction={{ xs: "column", md: "row" }}
             justifyContent="space-around"
             alignItems={"center"}
           >
             {content?.choose?.case.map((item) => (
-              <Typography variant="h6" key={item} sx={{ width: "45%" }}>
+              <Typography
+                variant="h6"
+                key={item}
+                sx={{ width: { xs: "95%", md: "45%" } }}
+              >
                 <li>{item}</li>
               </Typography>
             ))}
