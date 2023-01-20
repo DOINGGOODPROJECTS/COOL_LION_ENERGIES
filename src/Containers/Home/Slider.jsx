@@ -1,72 +1,21 @@
-import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { useTheme } from "styled-components";
-import { useSelector } from "react-redux";
-import { selectedLanguage } from "../../Context/LanguageSlice";
 import Redirect from "../../Helpers/Redirect";
 
 const Slider = () => {
-  const [sliderState, setSliderState] = React.useState(0);
-  const language = useSelector(selectedLanguage).language;
-
-  const { palette, width } = useTheme();
-
-  const handleNext = React.useCallback(() => {
-    if (sliderState !== undefined && sliderState !== null && sliderState < 3) {
-      setSliderState((state) => state + 1);
-    }
-    console.log(sliderState);
-  }, [sliderState]);
-
-  const handlePrev = React.useCallback(() => {
-    if (sliderState !== undefined && sliderState !== null && sliderState > 0) {
-      setSliderState((state) => state - 1);
-    }
-
-    console.log(sliderState);
-  }, [sliderState]);
-  return (
-    <Stack
-      sx={{ margin: "auto", width: width }}
-      direction={"row"}
-      justifyContent={"space-between"}
-      alignitems={"center"}
-    >
-      <Stack justifyContent={"center"} alignItems="center">
-        <IconButton size="large" onClick={handlePrev}>
-          <ChevronLeftIcon
-            fontSize="large"
-            sx={{ color: palette.primary.main }}
-          />
-        </IconButton>
-      </Stack>
-      {language.home.map((item, key) => {
-        return (
-          key === sliderState && <SliderContent {...item} key={item.title} />
-        );
-      })}
-      <Stack justifyContent={"center"} alignItems="center">
-        <IconButton size="large" onClick={handleNext}>
-          <ChevronRightIcon
-            fontSize="large"
-            sx={{ color: palette.primary.main }}
-          />
-        </IconButton>
-      </Stack>
-    </Stack>
-  );
+  return <Stack></Stack>;
 };
-const SliderContent = ({ title, text, button, image, link }) => {
+export const SliderContent = ({ title, text, button, image, link }) => {
   const { palette } = useTheme();
   return (
     <Stack
-      direction={{ sm: "column", md: "row" }}
+      direction={{ xs: "column-reverse", md: "row" }}
       justifyContent="space-between"
       alignItems={"center"}
+      spacing={2}
       sx={{
-        width: "100%",
+        width: "90%",
         height: "530px",
         padding: "15px 10px",
       }}
@@ -77,13 +26,23 @@ const SliderContent = ({ title, text, button, image, link }) => {
           height: "100%",
           marginBottom: { xs: "20px", md: "0" },
         }}
-        alignItems="flex-start"
+        alignItems="center"
         justifyContent={"space-around"}
       >
         <Typography
-          variant="h2"
+          variant={"h2"}
           sx={{
             color: palette.primary.main,
+            display:{xs:'none',md:'block'}
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography
+          variant={"h4"}
+          sx={{
+            color: palette.primary.main,
+            display:{xs:'block',md:'none'}
           }}
         >
           {title}
@@ -98,7 +57,6 @@ const SliderContent = ({ title, text, button, image, link }) => {
                 color: palette.primary.main,
                 marginTop: "15px",
               }}
-              
             >
               {button}
             </Button>
@@ -106,7 +64,7 @@ const SliderContent = ({ title, text, button, image, link }) => {
         </Box>
       </Stack>
       <Stack
-        sx={{ width: { sm: "100%", md: "55%" }, height: "100%" }}
+        sx={{ width: { xs: "100%", md: "55%" }, height: "100%" }}
         justifyContent="center"
         alignItems="center"
       >

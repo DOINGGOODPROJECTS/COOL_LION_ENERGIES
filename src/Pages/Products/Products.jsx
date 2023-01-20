@@ -6,12 +6,10 @@ import { useTheme } from "styled-components";
 import { selectedLanguage } from "../../Context/LanguageSlice";
 import "./products.css";
 import Redirect from "../../Helpers/Redirect";
-import CreateModal from "../../Components/Modal/CreateModal";
 import Contact from "../../Containers/Home/Contact";
 
 const Products = ({ path }) => {
   const { language } = useSelector(selectedLanguage);
-  const [formState, setFormState] = React.useState();
   const content = language.products[path];
   const { palette, width } = useTheme();
   return (
@@ -65,8 +63,8 @@ const Products = ({ path }) => {
             justifyContent="space-around"
             alignItems={"center"}
           >
-            {content?.choose?.case.map((item, key) => (
-              <Typography variant="h6" key={key} sx={{ width: "45%" }}>
+            {content?.choose?.case.map((item) => (
+              <Typography variant="h6" key={item} sx={{ width: "45%" }}>
                 <li>{item}</li>
               </Typography>
             ))}

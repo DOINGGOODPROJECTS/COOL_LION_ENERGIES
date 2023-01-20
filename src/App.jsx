@@ -7,6 +7,12 @@ import Footer from "./Containers/Footer";
 import Header from "./Containers/Header";
 import { changeState, selectedSidebar } from "./Context/SidebarSlice";
 import React from "react";
+import Carousel from "react-material-ui-carousel";
+import { selectedLanguage } from "./Context/LanguageSlice";
+import { Box, Paper, Stack } from "@mui/material";
+import { SliderContent } from "./Containers/Home/Slider";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 function App() {
   const { palette } = useTheme();
@@ -18,10 +24,13 @@ function App() {
     dispatch(changeState({ status: !sidebardState }));
     setSiderbarStateValue(!sidebardState);
   }, [dispatch, sidebardState]);
-  
+
   React.useEffect(() => {
-    setSiderbarStateValue(sidebardState)
-  },[sidebardState])
+    setSiderbarStateValue(sidebardState);
+  }, [sidebardState]);
+
+  const language = useSelector(selectedLanguage).language;
+  const { width } = useTheme();
   return (
     <div
       className="App"
@@ -37,7 +46,7 @@ function App() {
             background: "white",
             height: "1000px",
             zIndex: 10000,
-            position:'fixed'
+            position: "fixed",
           },
           content: { height: "10000px" },
         }}
@@ -46,6 +55,20 @@ function App() {
       >
         <p>d</p>
       </Sidebar>
+      <Carousel NextIcon={<ChevronRightIcon />} PrevIcon={<ChevronLeftIcon />}>
+        {language.home.map((item, key) => {
+          return (
+            <Stack
+              justifyConten="center"
+              alignItems="center"
+              sx={{ width: width }}
+              key={item.title}
+            >
+              <SliderContent {...item} />
+            </Stack>
+          );
+        })}
+      </Carousel>
       <Outlet />
       <Footer />
     </div>
