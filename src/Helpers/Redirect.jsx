@@ -1,23 +1,22 @@
-import { Box } from '@mui/system'
-import React, { useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Box } from "@mui/system";
+import React, { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Redirect = ({link,children,target=false}) => {
-    const navigate = useNavigate(link);
+const Redirect = ({ link, children, target = false }) => {
+  const navigate = useNavigate(link);
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+  const redirectFunction = useCallback(() => {
+    if (target === false) {
+      navigate(link);
+    } else if (target === true) {
+      window.open(link, "_blank");
+    }
+  }, [link, navigate, target]);
 
-    const redirectFunction = useCallback(() => {
-        if(target === false){
-            navigate(link);
-        }else if (target === true){
-            window.open(link, '_blank');
-        }
-    }, [link, navigate,target]);
+  return <Box onClick={redirectFunction}>{children}</Box>;
+};
 
-  return (
-    <Box onClick={redirectFunction}>
-      {children}
-    </Box>
-  )
-}
-
-export default Redirect
+export default Redirect;

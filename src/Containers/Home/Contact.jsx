@@ -29,6 +29,7 @@ const Contact = ({ modale = false }) => {
       }}
       spacing={2}
     >
+      <div id="contact"></div>
       <Stack
         sx={{ width: width }}
         component="form"

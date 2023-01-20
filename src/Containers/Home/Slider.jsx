@@ -14,7 +14,7 @@ const Slider = () => {
   const { palette, width } = useTheme();
 
   const handleNext = React.useCallback(() => {
-    if (sliderState !== undefined && sliderState !== null && sliderState < 4) {
+    if (sliderState !== undefined && sliderState !== null && sliderState < 3) {
       setSliderState((state) => state + 1);
     }
     console.log(sliderState);

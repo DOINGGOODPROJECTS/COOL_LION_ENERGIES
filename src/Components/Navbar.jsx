@@ -27,7 +27,7 @@ const Navbar = () => {
 
   const handleChange = React.useCallback(() => {
     dispatch(changeState({ status: !sidebardState }));
-  console.log(sidebardState);
+    console.log(sidebardState);
   }, [dispatch, sidebardState]);
 
   const open = Boolean(anchorEl);
@@ -149,21 +149,23 @@ const Navbar = () => {
               </Redirect>
             </Stack>
             <Stack>
-              <Button
-                size="large"
-                variant="contained"
-                sx={{
-                  background: palette.secondary.main,
-                  color: palette.primary.main,
-                  "&:hover": {
+              <a href={"#contact"} style={{textDecoration:'none'}}>
+                <Button
+                  size="large"
+                  variant="contained"
+                  sx={{
                     background: palette.secondary.main,
-                    color: palette.primary.dark,
-                  },
-                }}
-              >
-                {" "}
-                {language.appbar.button}
-              </Button>
+                    color: palette.primary.main,
+                    "&:hover": {
+                      background: palette.secondary.main,
+                      color: palette.primary.dark,
+                    },
+                  }}
+                >
+                  {" "}
+                  {language.appbar.button}
+                </Button>
+              </a>
             </Stack>
           </Stack>
         </Toolbar>
