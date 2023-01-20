@@ -137,10 +137,12 @@ const Navbar = () => {
                   );
                 })}
               </Menu>
-              <Button sx={{ color: palette.secondary.main }}>
-                {" "}
-                {language.appbar.navLink.news}
-              </Button>
+              <Redirect link={Routes.NewsRouteLink}>
+                <Button sx={{ color: palette.secondary.main }}>
+                  {" "}
+                  {language.appbar.navLink.news}
+                </Button>
+              </Redirect>
               <Redirect link={Routes.ContactRouteLink}>
                 <Button sx={{ color: palette.secondary.main }}>
                   {" "}

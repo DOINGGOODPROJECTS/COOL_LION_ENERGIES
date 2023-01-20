@@ -3,7 +3,7 @@ const Routes = {
   HomeRouteLink: "/",
   AboutRouteLink: "/about",
   OurSolutionRouteLink: "#solution",
-  NewsRouteLink: "#news",
+  NewsRouteLink: "/news",
   ProductRouteLink: "/products",
   EmergencyRouteLink: "/products/emergency",
   ClimRouteLink: "/products/clim",

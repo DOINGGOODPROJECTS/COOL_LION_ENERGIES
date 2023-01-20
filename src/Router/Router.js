@@ -4,6 +4,7 @@ import ContactPage from "../Pages/ContactPage";
 import Errors from "../Pages/Errors";
 import Home from "../Pages/Home";
 import Products from "../Pages/Products/Products";
+import Reseaux from "../Pages/Reseaux";
 import Routes from "./Routes";
 
 const Router = createBrowserRouter([
@@ -43,6 +44,10 @@ const Router = createBrowserRouter([
       {
         path: Routes.ContactRouteLink,
         element: <ContactPage />,
+      },
+      {
+        path: Routes.NewsRouteLink,
+        element: <Reseaux />,
       },
     ],
   },
