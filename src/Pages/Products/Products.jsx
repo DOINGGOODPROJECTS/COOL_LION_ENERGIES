@@ -11,6 +11,7 @@ import Contact from "../../Containers/Home/Contact";
 
 const Products = ({ path }) => {
   const { language } = useSelector(selectedLanguage);
+  const [formState, setFormState] = React.useState();
   const content = language.products[path];
   const { palette, width } = useTheme();
   return (
@@ -48,10 +49,14 @@ const Products = ({ path }) => {
         </Typography>
       </Stack>
       {content?.choose !== undefined && (
-        <Stack spacing={2} sx={{ paddingTop: "0vh", paddingBottom: "10vh" }}>
+        <Stack spacing={2} sx={{ paddingTop: "0vh", paddingBottom: "5vh" }}>
           <Typography
             variant="h4"
-            sx={{ color: palette.primary.main, textAlign: "center",marginBottom:'5vh' }}
+            sx={{
+              color: palette.primary.main,
+              textAlign: "center",
+              marginBottom: "5vh",
+            }}
           >
             {content?.choose?.title}
           </Typography>
@@ -72,28 +77,28 @@ const Products = ({ path }) => {
         direction={"row"}
         justifyContent="space-around"
         alignItems={"center"}
-        sx={{ paddingTop: "10vh" }}
+        sx={{ paddingBottom: "15vh" }}
       >
-        <Box sx={{ width: "45%" }}>
+        <Box sx={{ width: "100%" }}>
           <Redirect link={"mailto:richards@coollionenergies.com"} target={true}>
-            <Button variant="contained" size="large" sx={{ width: "100%" }}>
+            <Button
+              variant="contained"
+              size="large"
+              sx={{
+                width: "100%",
+                color: palette.secondary.light,
+                background: palette.primary.main,
+                "&:hover": {
+                  background: palette.primary.dark,
+                },
+              }}
+            >
               <Typography>{language.products.button[0]}</Typography>
             </Button>
           </Redirect>
         </Box>
-        <Box sx={{ width: "45%" }}>
-          <CreateModal
-            ButtonContent={
-              <Button variant="outlined" size="large" sx={{ width: "100%" }}>
-                <Typography>{language.products.button[1]}</Typography>
-              </Button>
-            }
-            ModalContent={Contact}
-            ContentProps={{ modale: true }}
-            position="center"
-          />
-        </Box>
       </Stack>
+      <Contact />
     </Stack>
   );
 };
