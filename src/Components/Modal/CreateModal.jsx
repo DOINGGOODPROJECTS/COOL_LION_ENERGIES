@@ -53,7 +53,8 @@ const CreateModal = ({
     position: "absolute",
     bgcolor: "background.paper",
     boxShadow: 24,
-    maxHeight: "100vh",
+    maxHeight: "95vh",
+    maxWidth:'80vw',
     overflowY: "scroll !important",
     overflow: "hidden",
   };
@@ -87,7 +88,7 @@ const CreateModal = ({
           timeout: 500,
         }}
         sx={{
-          zIndex: 10000,
+          zIndex: 1000,
         }}
       >
         <Fade in={open}>

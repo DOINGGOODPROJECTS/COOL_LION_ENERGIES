@@ -40,7 +40,10 @@ const Navbar = () => {
         margin: "auto",
       }}
     >
-      <AppBar sx={{ background: palette.primary.main }} component="nav">
+      <AppBar
+        sx={{ background: palette.primary.main, zIndex: "999" }}
+        component="nav"
+      >
         <Toolbar
           sx={{
             display: "felx",
