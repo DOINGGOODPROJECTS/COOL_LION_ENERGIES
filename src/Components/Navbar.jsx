@@ -14,14 +14,26 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Redirect from "../Helpers/Redirect";
 import Routes from "../Router/Routes";
 import CreateModal from "./Modal/CreateModal";
-import Sidebar from "./Sidebar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectedLanguage } from "../Context/LanguageSlice";
+import Sidebar from "react-sidebar";
+import { Box } from "@mui/system";
+import SidebarSlide from "./SidebarSlide";
+import { changeState, selectedSidebar } from "../Context/SidebarSlice";
 
 const Navbar = () => {
   const { palette, width } = useTheme();
   const language = useSelector(selectedLanguage).language;
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const sidebardState = useSelector(selectedSidebar).sidebard.status;
+
+  const dispatch = useDispatch();
+
+  const handleChange = React.useCallback(() => {
+    dispatch(changeState({ status: !sidebardState }));
+  console.log(sidebardState);
+  }, [dispatch, sidebardState]);
+
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -46,9 +58,10 @@ const Navbar = () => {
       >
         <Toolbar
           sx={{
-            display: "felx",
+            display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
+            position: "relative",
           }}
         >
           <Redirect link={Routes.HomeRouteLink}>
@@ -66,29 +79,27 @@ const Navbar = () => {
               />
             </IconButton>
           </Redirect>
-          <CreateModal
-            ButtonContent={
-              <IconButton
-                sx={{
-                  display: { sm: "block", md: "none" },
-                }}
-              >
-                <MenuIcon
-                  size="large"
-                  fontSize="large"
-                  sx={{ color: palette.secondary.main }}
-                />
-              </IconButton>
-            }
-            ModalContent={Sidebar}
-            g
-            position="left"
-          />
+
+          <IconButton
+            sx={{
+              display: { sm: "block", md: "none" },
+            }}
+            onClick={handleChange}
+          >
+            <MenuIcon
+              size="large"
+              fontSize="large"
+              sx={{ color: palette.secondary.main }}
+            />
+          </IconButton>
+
           <Stack
             direction={"row"}
-            justifyContent="space-between"
+            justifyContent="flex-end"
             alignItems={"center"}
-            width="60%"
+            width="80%"
+            sx={{ display: { xs: "none", md: "flex" } }}
+            spacing={4}
           >
             <Stack
               direction={"row"}

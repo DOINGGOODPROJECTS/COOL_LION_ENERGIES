@@ -35,8 +35,8 @@ const CreateModal = ({
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const LeftPosition = {
-    top: "0%",
-    left: "0%",
+    top: "10%",
+    left: "50%",
   };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const TopPosition = {
@@ -53,8 +53,6 @@ const CreateModal = ({
     position: "absolute",
     bgcolor: "background.paper",
     boxShadow: 24,
-    maxHeight: "95vh",
-    maxWidth:'80vw',
     overflowY: "scroll !important",
     overflow: "hidden",
   };

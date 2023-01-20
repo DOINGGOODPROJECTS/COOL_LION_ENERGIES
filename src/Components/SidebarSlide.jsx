@@ -17,12 +17,12 @@ import ImageWithoutName from "../Assets/Icons/LogoWithoutName.svg";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
-const Sidebar = () => {
+const SidebarSlide = () => {
   const { palette } = useTheme();
   return (
     <Box
       sx={{
-        height: "100vh",
+        height:'100vh',
         width: "70vw",
         padding: "0 10px",
       }}
@@ -50,7 +50,6 @@ const Sidebar = () => {
           </IconButton>
         </Redirect>
       </Stack>
-      <Divider sx={{ color: palette.primary.dark }} />
       <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
         <nav aria-label="main mailbox folders">
           <List>
@@ -78,4 +77,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SidebarSlide;
