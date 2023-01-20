@@ -10,16 +10,89 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import { useFormik } from "formik";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import CountrySelect from "../../Components/CountrySelect";
 import { selectedLanguage } from "../../Context/LanguageSlice";
 import countriesList from "../../Seeds/Forms/country";
+import * as Yup from "yup";
 
 const Contact = ({ modale = false }) => {
   const { palette, width } = useTheme();
   const { language } = useSelector(selectedLanguage);
+  const validationSchema = Yup.object().shape({
+    firstName: Yup.string()
+      .min(2, "First name must be at least 2 characters")
+      .required("First name is required"),
+    lastName: Yup.string()
+      .min(2, "Last name must be at least 2 characters")
+      .required("Last name is required"),
+    email: Yup.string()
+      .email("Invalid email address")
+      .required("Email is required"),
+    phone: Yup.string()
+      .matches(
+        /^\d{3}-\d{3}-\d{4}$/,
+        "Invalid phone number example: 050-643-0832"
+      )
+      .required("Phone number is required"),
+    organization: Yup.string()
+      .min(3, "Organization name must be at least 3 characters")
+      .required("Organization is required"),
+    request: Yup.string()
+      .min(5, "Request must be at least 10 characters")
+      .required("Request is required"),
+    message: Yup.string()
+      .min(10, "Message must be at least 10 characters")
+      .required("Message is required"),
+  });
+
+  const Submit = async (values, actions) => {
+    // try {
+    //   // Create transporter using your email service provider (e.g. Gmail, Outlook, etc)
+    //   const transporter = nodemailer.createTransport({
+    //     service: 'Gmail',
+    //     auth: {
+    //       user: 'your-email@gmail.com',
+    //       pass: 'your-password',
+    //     },
+    //   });
+
+    //   // Setup email data
+    //   const mailOptions = {
+    //     from: 'your-email@gmail.com',
+    //     to: values.email,
+    //     subject: 'Test email',
+    //     text: values.message,
+    //   };
+
+    //   // Send email
+    //   const info = await transporter.sendMail(mailOptions);
+    //   console.log('Email sent: ', info.response);
+    //   setIsSent(true);
+    //   actions.setSubmitting(false);
+    // } catch (error) {
+    //   console.log(error);
+    //   actions.setSubmitting(false);
+    // }
+  };
+
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      organization: "",
+      request: "",
+      country: "",
+      message: "",
+    },
+    validationSchema: validationSchema,
+    onSubmit: Submit,
+  });
   return (
     <Stack
       justifyContent="center"
@@ -32,7 +105,6 @@ const Contact = ({ modale = false }) => {
       <div id="contact"></div>
       <Stack
         sx={{ width: width }}
-        component="form"
         justifyContent={"center"}
         alignItems="center"
       >
@@ -48,6 +120,8 @@ const Contact = ({ modale = false }) => {
             flexDirection: "column",
             rowGap: "20px",
           }}
+          component="form"
+          onSubmit={formik.handleSubmit}
         >
           <Typography variant="h3">{language.contact.title}</Typography>
 
@@ -62,11 +136,21 @@ const Contact = ({ modale = false }) => {
               variant="outlined"
               label={language.contact.form.firstName}
               sx={{ width: "100%" }}
+              error={formik.touched.firstName && formik.errors.firstName}
+              helperText={formik.touched.firstName && formik.errors.firstName}
+              name="firstName"
+              value={formik.values.firstName}
+              onChange={formik.handleChange}
             />
             <TextField
               variant="outlined"
               label={language.contact.form.lastName}
               sx={{ width: "100%" }}
+              error={formik.touched.lastName && formik.errors.lastName}
+              helperText={formik.touched.lastName && formik.errors.lastName}
+              name="lastName"
+              value={formik.values.lastName}
+              onChange={formik.handleChange}
             />
           </Stack>
           <Stack
@@ -80,25 +164,53 @@ const Contact = ({ modale = false }) => {
               variant="outlined"
               label={language.contact.form.email}
               sx={{ width: "100%" }}
+              error={formik.touched.email && formik.errors.email}
+              helperText={formik.touched.email && formik.errors.email}
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
             />
             <TextField
               variant="outlined"
               label={language.contact.form.phone}
               sx={{ width: "100%" }}
+              name="phone"
+              error={formik.touched.phone && formik.errors.phone}
+              helperText={formik.touched.phone && formik.errors.phone}
+              value={formik.values.phone}
+              onChange={formik.handleChange}
             />
           </Stack>
           <TextField
             sx={{ width: "80%" }}
             variant="outlined"
             label={language.contact.form.organisation}
+            error={formik.touched.organization && formik.errors.organization}
+            helperText={
+              formik.touched.organization && formik.errors.organization
+            }
+            name="organization"
+            value={formik.values.organization}
+            onChange={formik.handleChange}
           />
           <FormControl sx={{ width: "80%" }} component="div">
             <InputLabel id="demo-simple-select-label">
               {language.contact.form.typeOfRequest.title}
             </InputLabel>
-            <Select sx={{ width: "100%" }}>
+            <Select
+              sx={{ width: "100%" }}
+              onChange={formik.handleChange}
+              value={formik.values.request}
+              name="request"
+              error={formik.touched.request && formik.errors.request}
+              helperText={formik.touched.request && formik.errors.request}
+            >
               {language.contact.form.typeOfRequest.content.map((item) => {
-                return <MenuItem key={item}>{item}</MenuItem>;
+                return (
+                  <MenuItem key={item} value={item}>
+                    {item}
+                  </MenuItem>
+                );
               })}
             </Select>
           </FormControl>
@@ -107,14 +219,18 @@ const Contact = ({ modale = false }) => {
             <CountrySelect
               items={countriesList}
               title={language.contact.form.country}
-              selectCountry={(value) => console.log(value)}
+              selectCountry={(value) => value}
             />
           </Box>
           <Box sx={{ width: "80%" }}>
             <TextField
               id="story"
-              name="story"
+              name="message"
+              error={formik.touched.message && formik.errors.message}
+              helperText={formik.touched.message && formik.errors.message}
               label={language.contact.form.message}
+              value={formik.values.message}
+              onChange={formik.handleChange}
               sx={{
                 width: "100%",
               }}
@@ -141,6 +257,7 @@ const Contact = ({ modale = false }) => {
                 background: palette.primary.dark,
               },
             }}
+            type="submit"
           >
             {language.contact.form.send}
           </Button>
