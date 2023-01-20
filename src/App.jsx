@@ -43,7 +43,9 @@ function App() {
         }}
         open={siderbarStateValue === true}
         onSetOpen={handleChange}
-      ></Sidebar>
+      >
+        <p>d</p>
+      </Sidebar>
       <Outlet />
       <Footer />
     </div>

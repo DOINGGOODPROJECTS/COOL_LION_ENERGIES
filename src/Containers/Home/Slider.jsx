@@ -29,7 +29,7 @@ const Slider = () => {
   return (
     <Stack
       sx={{ margin: "auto", width: width }}
-      direction="row"
+      direction={"row"}
       justifyContent={"space-between"}
       alignitems={"center"}
     >
@@ -61,7 +61,7 @@ const SliderContent = ({ title, text, button, image }) => {
   const { palette } = useTheme();
   return (
     <Stack
-      direction={"row"}
+      direction={{ sm: "column", md: "row" }}
       justifyContent="space-between"
       alignItems={"center"}
       sx={{
@@ -71,13 +71,18 @@ const SliderContent = ({ title, text, button, image }) => {
       }}
     >
       <Stack
-        sx={{ width: "42%", height: "100%" }}
+        sx={{ width: { sm: "100%", md: "42%" }, height: "100%",marginBottom:{xs:'20px',md:"0"} }}
         alignItems="flex-start"
         justifyContent={"space-around"}
       >
-        <Typography variant="h2" sx={{
-          color:palette.primary.main
-        }}>{title}</Typography>
+        <Typography
+          variant="h2"
+          sx={{
+            color: palette.primary.main,
+          }}
+        >
+          {title}
+        </Typography>
         <Box>
           <Typography variant="h6">{text}</Typography>
           <Button
@@ -93,7 +98,7 @@ const SliderContent = ({ title, text, button, image }) => {
         </Box>
       </Stack>
       <Stack
-        sx={{ width: "55%", height: "100%" }}
+        sx={{ width: { sm: "100%", md: "55%" }, height: "100%" }}
         justifyContent="center"
         alignItems="center"
       >
