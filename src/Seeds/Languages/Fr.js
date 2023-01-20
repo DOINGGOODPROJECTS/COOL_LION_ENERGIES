@@ -6,6 +6,7 @@ import emergency from "../../Assets/Imgs/emergency.png";
 import climSolution from "../../Assets/Imgs/climSolution.jpg";
 import shedsSolution from "../../Assets/Imgs/shedsSolution.jpg";
 import Routes from "../../Router/Routes";
+import meeting from "../../Assets/Imgs/meeting.jpg";
 
 const FrenchContent = {
   appbar: {
@@ -113,21 +114,50 @@ const FrenchContent = {
     newsLetter: "Abonnez vous à notre newsletter",
   },
   products: {
+    button: ["DEMANDEZ UN DEVIS", "FORMULAIRE CONTACT"],
     emergency: {
       title: "Cool Urgence Location | Chambres froides solaires",
       link: Routes.EmergencyRouteLink,
+      image: emergency,
+      text: "La location 'un stockage frigorifique est la solution idéale pour faire face aux imprévus (urgence, panne…), pallier un manque de capacité temporaire, la rénovation ou la révision de votre propre stockage frigorifique.Sur votre site, nous sommes en mesure de déplacer des groupes électrogènes de réfrigération solaire, autonomes qui peuvent être joints à vos bâtiments ou toute infrastructure de stockage pour les louer sur une période fixe.En outre, nous disposons d’un conteneur frigorifique solaire de 20 pieds à température positive sur notre site à Djorogobité (Angré) susceptible d’accueillir votre marchandise à tout moment. ",
+      subTitle: "",
+      choose: {
+        title: "Vous avez donc deux possibilités",
+        case: [
+          "Louer de l’espace de stockage à l'intérieur de nos conteneurs pour la conservation sur une période fixe de vos produits",
+          "Faire déployer des groupes électrogènes de froid solaire sur votre site pour location sur une période donnée.",
+        ],
+      },
     },
     clim: {
       title: "Cool Clim | Chambres froides solaires",
       link: Routes.ClimRouteLink,
+      image: clim,
+      text: "Nous disposons de conteneurs réfrigérés alimentés à 100% par l'énergie solaire, par énergie régulière, ou encore hybrides (plusieurs sources d’alimentation croisée) avec des tailles différentes (10, 20 et 40 pieds pour une capacité de stockage moyenne de 6, 20 et 29 tonnes). Pour les produits de pêche, on parle de chambre froide négative (entre -18°C et -30°C) et pour l'agriculture et l’agroalimentaire, on parle de chambre froide positive (entre +2°C et +16°C). La conservation de vos produits est ainsi rallongée de 2 semaines à 1 an. Les conteneurs sont assemblés localement à partir de panneaux préfabriqués importés et ont la particularité d’être amovibles, rapidement déployables et peu gourmandes en espace.",
+      subTitle:
+        "Nous offrons des solutions flexibles de paiement telles que le paiement à tempérament et le pay-as-you-go.",
     },
     sheds: {
-      title: "Cool Bâtiments | Bâtiments agricoles écologiques",
+      title: "Cool Hangars | Hangars solaires ",
       link: Routes.ShedsRouteLink,
+      text: "Quel que soit votre besoin (bâtiment de stockage, bâtiment d’élevage, parking…) et votre activité, un bâtiment photovoltaïque a de nombreux avantages.",
+      subTitle:
+        "Il vous permet de stocker votre marchandise et de produire aussi de l’énergie pour vos propres besoins et même de la revendre.",
     },
     buildings: {
-      title: "Cool Buildings | Green farm buildings",
+      title: "Cool Bâtiments | Bâtiments agricoles écologiques ",
       link: Routes.BuildingsRouteLink,
+      text: "Solution bien indiquée pour l'élevage et l’agriculture: les productions vivrières sans besoin de réfrigération (riz, maïs, soja, igname etc) qui ont besoin de conservation ambiante et à l’abri des rongeurs nuisibles – nous avons réinventer pour vous le traditionnel grenier ou le hangar de fortune de collecte groupée.",
+      subTitle:
+        "Nous proposons la construction de bâtiments à ventilation naturelle, écologiques qui utilisent  notamment des matériaux locaux tels que la brique de terre compressée etc.Nos designs sont à coût modéré, visuellement plaisants et embellissent le cadre de vie rural en transformant vos bâtiments en des lieux de vie.",
+    },
+    support: {
+      title: "Conseil & Accompagnement ",
+      link: Routes.SupportRouteLink,
+      image: meeting,
+      text: "Vous avez un projet relatif au stockage et au stockage frigorifique ?      ",
+      subTitle:
+        "Nous vous accompagnons pour vos études, du conseil ou encore pour la réalisation bout-en-bout de votre projet.",
     },
   },
 };

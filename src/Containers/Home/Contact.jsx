@@ -17,14 +17,16 @@ import CountrySelect from "../../Components/CountrySelect";
 import { selectedLanguage } from "../../Context/LanguageSlice";
 import countriesList from "../../Seeds/Forms/country";
 
-const Contact = () => {
+const Contact = ({ modale = false }) => {
   const { palette, width } = useTheme();
   const { language } = useSelector(selectedLanguage);
   return (
     <Stack
       justifyContent="center"
       alignItems="center"
-      sx={{ marginTop: "10vh" }}
+      sx={{
+        margin: modale === true ? "20px auto" : "10vh auto auto auto",
+      }}
       spacing={2}
     >
       <Stack
@@ -36,8 +38,8 @@ const Contact = () => {
         <Box
           sx={{
             background: palette.secondary.dark,
-            width: "85%",
-            padding: "35px 0",
+            width: "65%",
+            padding: modale === true ? "auto" : "35px 0",
             borderRadius: "10px",
             display: "flex",
             justifyContent: "center",

@@ -1,10 +1,13 @@
-import { Button, ListItem, Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useTheme } from "styled-components";
 import { selectedLanguage } from "../../Context/LanguageSlice";
 import "./products.css";
+import Redirect from "../../Helpers/Redirect";
+import CreateModal from "../../Components/Modal/CreateModal";
+import Contact from "../../Containers/Home/Contact";
 
 const Products = ({ path }) => {
   const { language } = useSelector(selectedLanguage);
@@ -71,12 +74,25 @@ const Products = ({ path }) => {
         alignItems={"center"}
         sx={{ paddingTop: "10vh" }}
       >
-        <Button variant="contained" size="large" sx={{ width: "45%" }}>
-          <Typography>{language.products.button[0]}</Typography>
-        </Button>
-        <Button variant="outlined" size="large" sx={{ width: "45%" }}>
-          <Typography>{language.products.button[1]}</Typography>
-        </Button>
+        <Box sx={{ width: "45%" }}>
+          <Redirect link={"mailto:richards@coollionenergies.com"} target={true}>
+            <Button variant="contained" size="large" sx={{ width: "100%" }}>
+              <Typography>{language.products.button[0]}</Typography>
+            </Button>
+          </Redirect>
+        </Box>
+        <Box sx={{ width: "45%" }}>
+          <CreateModal
+            ButtonContent={
+              <Button variant="outlined" size="large" sx={{ width: "100%" }}>
+                <Typography>{language.products.button[1]}</Typography>
+              </Button>
+            }
+            ModalContent={Contact}
+            ContentProps={{ modale: true }}
+            position="center"
+          />
+        </Box>
       </Stack>
     </Stack>
   );

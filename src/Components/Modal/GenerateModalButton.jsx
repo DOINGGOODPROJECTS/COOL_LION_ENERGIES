@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const GenerateModalButton = ({handleOpen,content}) => {
+const GenerateModalButton = ({ handleOpen, content }) => {
   return (
     <div onClick={handleOpen}>
-        {content}
+      {content}
     </div>
-  )
-}
+  );
+};
 
-export default GenerateModalButton
+export default GenerateModalButton;
