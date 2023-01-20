@@ -13,12 +13,8 @@ import logoWithoutName from "../Assets/Icons/LogoWithName.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import Redirect from "../Helpers/Redirect";
 import Routes from "../Router/Routes";
-import CreateModal from "./Modal/CreateModal";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedLanguage } from "../Context/LanguageSlice";
-import Sidebar from "react-sidebar";
-import { Box } from "@mui/system";
-import SidebarSlide from "./SidebarSlide";
 import { changeState, selectedSidebar } from "../Context/SidebarSlice";
 
 const Navbar = () => {

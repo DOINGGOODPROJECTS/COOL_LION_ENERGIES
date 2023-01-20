@@ -1,29 +1,15 @@
-import {
-  Box,
-  Button,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
-  Stack,
-} from "@mui/material";
+import { Box, Button, IconButton, Menu, MenuItem, Stack } from "@mui/material";
 import React from "react";
 import Redirect from "../Helpers/Redirect";
 import Routes from "../Router/Routes";
 import ImageWithoutName from "../Assets/Icons/LogoWithoutName.svg";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedLanguage } from "../Context/LanguageSlice";
 import { useTheme } from "styled-components";
 import { changeState, selectedSidebar } from "../Context/SidebarSlice";
 
 const SidebarSlide = () => {
-  const { palette, width } = useTheme();
+  const { palette } = useTheme();
   const language = useSelector(selectedLanguage).language;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const sidebardState = useSelector(selectedSidebar).sidebard.status;
@@ -31,7 +17,7 @@ const SidebarSlide = () => {
 
   const handleChange = React.useCallback(() => {
     dispatch(changeState({ status: !sidebardState }));
-  });
+  }, [dispatch, sidebardState]);
 
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
