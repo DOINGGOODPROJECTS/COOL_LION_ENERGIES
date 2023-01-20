@@ -82,15 +82,11 @@ const Footer = () => {
             }}
           >
             <FooterBlock
-              Title={"HOME"}
+              Title={"PAGES"}
               Items={[
                 {
                   title: ContentLanguage.appbar.navLink.about,
                   link: Routes.HomeRouteLink,
-                },
-                {
-                  title: ContentLanguage.solution.title,
-                  link: Routes.OurSolutionRouteLink,
                 },
                 {
                   title: ContentLanguage.appbar.navLink.news,

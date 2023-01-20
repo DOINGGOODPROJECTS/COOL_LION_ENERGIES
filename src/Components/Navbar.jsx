@@ -134,10 +134,12 @@ const Navbar = () => {
                 {" "}
                 {language.appbar.navLink.news}
               </Button>
-              <Button sx={{ color: palette.secondary.main }}>
-                {" "}
-                {language.appbar.navLink.contact}
-              </Button>
+              <Redirect link={Routes.ContactRouteLink}>
+                <Button sx={{ color: palette.secondary.main }}>
+                  {" "}
+                  {language.appbar.navLink.contact}
+                </Button>
+              </Redirect>
             </Stack>
             <Stack>
               <Button

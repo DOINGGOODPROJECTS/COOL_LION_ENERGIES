@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import ContactPage from "../Pages/ContactPage";
 import Errors from "../Pages/Errors";
 import Home from "../Pages/Home";
 import Products from "../Pages/Products/Products";
@@ -38,6 +39,10 @@ const Router = createBrowserRouter([
       {
         path: Routes.SupportRouteLink,
         element: <Products path={"support"} />,
+      },
+      {
+        path: Routes.ContactRouteLink,
+        element: <ContactPage />,
       },
     ],
   },
