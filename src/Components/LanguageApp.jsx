@@ -15,7 +15,7 @@ const LanguageApp = ({ small = false }) => {
     },
     [dispatch]
   );
-  const { palette, width } = useTheme();
+  const { palette} = useTheme();
   return (
     <Select
       size="small"

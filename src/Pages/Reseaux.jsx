@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import { Stack } from "@mui/system";
 import React from "react";
-import { useTheme } from "styled-components";
 
 const Reseaux = () => {
   React.useEffect(() => {
