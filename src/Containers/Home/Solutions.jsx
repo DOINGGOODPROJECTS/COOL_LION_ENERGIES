@@ -53,7 +53,7 @@ const SolutionContent = ({
     <Stack
       direction={{ xs: "column-reverse", md: sens }}
       justifyContent="space-between"
-      alignItems={{ xs: "center", md: "flex-start" }}
+      alignItems={{ xs: "center", md: "center" }}
       sx={{
         width: width,
         height: "530px",
@@ -62,7 +62,7 @@ const SolutionContent = ({
       }}
     >
       <Stack
-        sx={{ width: { xs: "90%", md: "48%" }, height: "100%" }}
+        sx={{ width: { xs: "90%", md: "48%" }, maxHeight: "100%" }}
         alignItems={inverse === false ? "flex-start" : "flex-end"}
         justifyContent={"space-around"}
       >
@@ -85,17 +85,6 @@ const SolutionContent = ({
           >
             {text}
           </Typography>
-        </Stack>
-        <Stack
-          sx={{
-            width: "100%",
-            direction: "row",
-            justifyContent: { xs: "center", md: "flex-start" },
-            alignItems: { xs: "center", md: "flex-start" },
-            marginTop: { xs: "10px", md: "auto" },
-            transform:{xs:'none',md:'translate(0px,-100px)'}
-          }}
-        >
           <Redirect link={link}>
             <Button
               sx={{
@@ -126,8 +115,8 @@ const SolutionContent = ({
           alt="les information"
           style={{
             width: "auto",
-            maxWidth:"100%",
-            maxHeight:"400px",
+            maxWidth: "100%",
+            maxHeight: "400px",
             borderRadius: "40px",
           }}
         />
