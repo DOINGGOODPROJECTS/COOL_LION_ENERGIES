@@ -19,6 +19,7 @@ import { selectedLanguage } from "../../Context/LanguageSlice";
 import countriesList from "../../Seeds/Forms/country";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 const Contact = ({ modale = false }) => {
   const { palette, width } = useTheme();
@@ -52,24 +53,54 @@ const Contact = ({ modale = false }) => {
   const [country, setCountry] = React.useState();
   const form = React.useRef();
 
-  const Submit = (values) => {
-    values.country = country;
-    console.log(values);
-    emailjs
-      .sendForm(
-        "service_l11gc3q",
-        "template_4troa4d",
-        form.current,
-        "wEkrGALpxab4_1PE4"
-      )
-      .then(
-        (result) => {
-          console.log("sylla ibrahim succes", result.text);
-        },
-        (error) => {
-          console.log("sylla ibrahim error", error.text);
-        }
-      );
+  const Submit = (formData) => {
+    formData.country = country;
+
+    try {
+      axios
+        .post(
+          "https://api.sendinblue.com/v3/contacts",
+          {
+            email: formData.email,
+            listIds: [6], // replace with your list ID
+            attributes: {
+              FIRSTNAME: formData.firstName,
+              LASTNAME: formData.lastName,
+              PHONE: formData.phone,
+              ORGANIZATION: formData.organization,
+              TYPE_OF_REQUEST: formData.request,
+              COUNTRY: formData.country,
+              MESSAGE: formData.message,
+            },
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+              "api-key": process.env.REACT_APP_SENDINBLUE_API_KEY,
+            },
+          }
+        )
+        .then((values) => {
+          emailjs
+            .sendForm(
+              process.env.REACT_APP_EMAILJS_SERVICEID,
+              process.env.REACT_APP_EMAILJS_TEMPLATEID,
+              form.current,
+              process.env.REACT_APP_EMAILJS_PUBLICKEY
+            )
+            .then(
+              (result) => {
+                console.log("sylla ibrahim succes", result.text);
+              },
+              (error) => {
+                console.log("sylla ibrahim error", error.text);
+              }
+            );
+        });
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
   const formik = useFormik({
