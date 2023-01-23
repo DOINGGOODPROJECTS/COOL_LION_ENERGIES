@@ -1,9 +1,11 @@
 import {
+  Alert,
   Button,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
+  Snackbar,
   Stack,
   TextareaAutosize,
   TextField,
@@ -52,8 +54,18 @@ const Contact = ({ modale = false }) => {
   });
   const [country, setCountry] = React.useState();
   const form = React.useRef();
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    organization: "",
+    request: "",
+    country: "",
+    message: "",
+  };
 
-  const Submit = (formData) => {
+  const Submit = (formData, { resetForm }) => {
     formData.country = country;
 
     try {
@@ -91,32 +103,45 @@ const Contact = ({ modale = false }) => {
             )
             .then(
               (result) => {
-                console.log("sylla ibrahim succes", result.text);
+                setOpen({
+                  state: true,
+                  content: "success",
+                  message: "your form has been saved",
+                });
+                resetForm();
               },
               (error) => {
-                console.log("sylla ibrahim error", error.text);
+                setOpen({
+                  state: true,
+                  content: "error",
+                  message: "Server error make sure to fill in the fields",
+                });
               }
             );
         });
     } catch (error) {
-      console.log("Error:", error);
+      setOpen({
+        state: true,
+        content: "error",
+        message: "Server error make sure to fill in the fields",
+      });
     }
   };
 
   const formik = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      organization: "",
-      request: "",
-      country: "",
-      message: "",
-    },
+    initialValues: initialValues,
     validationSchema: validationSchema,
     onSubmit: Submit,
   });
+
+  const [open, setOpen] = React.useState({ state: false, type: "" });
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen({ state: false, type: "", message: "" });
+  };
+
   return (
     <Stack
       justifyContent="center"
@@ -127,6 +152,21 @@ const Contact = ({ modale = false }) => {
       spacing={2}
     >
       <div id="contact"></div>
+      <Stack spacing={2} sx={{ width: "100%" }}>
+        <Snackbar
+          open={open.state}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
+          <Alert
+            onClose={handleClose}
+            severity={open.content}
+            sx={{ width: "100%" }}
+          >
+            {open.message}
+          </Alert>
+        </Snackbar>
+      </Stack>
       <Stack
         sx={{ width: width }}
         justifyContent={"center"}
