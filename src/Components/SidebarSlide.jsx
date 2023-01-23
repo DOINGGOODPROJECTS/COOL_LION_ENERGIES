@@ -93,7 +93,7 @@ const SidebarSlide = () => {
               const item = items[1];
               return (
                 key >= 1 && (
-                  <Redirect link={item.link} key={items.title}>
+                  <Redirect link={item.link} key={key}>
                     <MenuItem onClick={handleClose}>{item.title}</MenuItem>
                   </Redirect>
                 )

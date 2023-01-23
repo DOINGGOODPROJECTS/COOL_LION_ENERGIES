@@ -18,6 +18,7 @@ import CountrySelect from "../../Components/CountrySelect";
 import { selectedLanguage } from "../../Context/LanguageSlice";
 import countriesList from "../../Seeds/Forms/country";
 import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
 
 const Contact = ({ modale = false }) => {
   const { palette, width } = useTheme();
@@ -48,35 +49,27 @@ const Contact = ({ modale = false }) => {
       .min(10, "Message must be at least 10 characters")
       .required("Message is required"),
   });
+  const [country, setCountry] = React.useState();
+  const form = React.useRef();
 
-  const Submit = async (values, actions) => {
-    // try {
-    //   // Create transporter using your email service provider (e.g. Gmail, Outlook, etc)
-    //   const transporter = nodemailer.createTransport({
-    //     service: 'Gmail',
-    //     auth: {
-    //       user: 'your-email@gmail.com',
-    //       pass: 'your-password',
-    //     },
-    //   });
-
-    //   // Setup email data
-    //   const mailOptions = {
-    //     from: 'your-email@gmail.com',
-    //     to: values.email,
-    //     subject: 'Test email',
-    //     text: values.message,
-    //   };
-
-    //   // Send email
-    //   const info = await transporter.sendMail(mailOptions);
-    //   console.log('Email sent: ', info.response);
-    //   setIsSent(true);
-    //   actions.setSubmitting(false);
-    // } catch (error) {
-    //   console.log(error);
-    //   actions.setSubmitting(false);
-    // }
+  const Submit = (values) => {
+    values.country = country;
+    console.log(values);
+    emailjs
+      .sendForm(
+        "service_l11gc3q",
+        "template_4troa4d",
+        form.current,
+        "wEkrGALpxab4_1PE4"
+      )
+      .then(
+        (result) => {
+          console.log("sylla ibrahim succes", result.text);
+        },
+        (error) => {
+          console.log("sylla ibrahim error", error.text);
+        }
+      );
   };
 
   const formik = useFormik({
@@ -122,6 +115,7 @@ const Contact = ({ modale = false }) => {
           }}
           component="form"
           onSubmit={formik.handleSubmit}
+          ref={form}
         >
           <Typography variant="h3">{language.contact.title}</Typography>
 
@@ -203,7 +197,6 @@ const Contact = ({ modale = false }) => {
               value={formik.values.request}
               name="request"
               error={formik.touched.request && formik.errors.request}
-              helperText={formik.touched.request && formik.errors.request}
             >
               {language.contact.form.typeOfRequest.content.map((item) => {
                 return (
@@ -219,7 +212,7 @@ const Contact = ({ modale = false }) => {
             <CountrySelect
               items={countriesList}
               title={language.contact.form.country}
-              selectCountry={(value) => value}
+              selectCountry={(value) => setCountry(value.name.common)}
             />
           </Box>
           <Box sx={{ width: "80%" }}>

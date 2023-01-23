@@ -129,10 +129,10 @@ const Navbar = () => {
                   "aria-labelledby": "basic-button",
                 }}
               >
-                {Object.entries(language.products).map((items) => {
+                {Object.entries(language.products).map((items, key) => {
                   const item = items[1];
                   return (
-                    <Redirect link={item.link} key={item.title}>
+                    <Redirect link={item.link} key={key}>
                       <MenuItem onClick={handleClose}>{item.title}</MenuItem>
                     </Redirect>
                   );
