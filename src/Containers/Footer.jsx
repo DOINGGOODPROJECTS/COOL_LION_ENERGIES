@@ -7,6 +7,7 @@ import { selectedLanguage } from "../Context/LanguageSlice";
 import Routes from "../Router/Routes";
 import Redirect from "../Helpers/Redirect";
 import LanguageApp from "../Components/LanguageApp";
+import Newsletter from "../Components/Newsletter";
 const Footer = () => {
   const { palette, width } = useTheme();
   const ContentLanguage = useSelector(selectedLanguage).language;
@@ -168,16 +169,7 @@ const Footer = () => {
               {ContentLanguage.footer.newsLetter}
             </Typography>
 
-            <TextField
-              sx={{
-                marginTop: "10px",
-                borderColor: palette.secondary.light,
-                background: palette.secondary.light,
-                color: palette.primary.main,
-                outline: "none",
-                border: "none",
-              }}
-            />
+            <Newsletter />
           </Box>
         </Box>
 
