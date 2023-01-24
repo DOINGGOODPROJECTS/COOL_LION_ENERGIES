@@ -36,7 +36,7 @@ const LanguageApp = ({ small = false }) => {
             alt="english"
             style={{ width: "30px", height: "20px" }}
           />
-          <Typography>{small === true ? "" : "English"}</Typography>
+          {small === false && <Typography>English</Typography>}
         </Stack>
       </MenuItem>
       <MenuItem value="french">
@@ -46,7 +46,7 @@ const LanguageApp = ({ small = false }) => {
             alt="Français"
             style={{ width: "30px", height: "20px" }}
           />
-          <Typography>{small === true ? "" : "Français"}</Typography>
+          {small === false && <Typography>Français</Typography>}
         </Stack>
       </MenuItem>
     </Select>
