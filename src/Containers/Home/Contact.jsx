@@ -118,6 +118,13 @@ const Contact = ({ modale = false }) => {
                 });
               }
             );
+        })
+        .catch((values) => {
+          setOpen({
+            state: true,
+            content: "error",
+            message: values.response.data.message,
+          });
         });
     } catch (error) {
       setOpen({
