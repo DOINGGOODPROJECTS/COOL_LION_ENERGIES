@@ -15,12 +15,12 @@ const LanguageApp = ({ small = false }) => {
     },
     [dispatch]
   );
-  const { palette} = useTheme();
+  const { palette } = useTheme();
   return (
     <Select
       size="small"
       sx={{
-        width: small === true ? "50px" : "150px",
+        width: small === true ? "auto" : "150px",
         marginBottom: "10px",
         borderColor: palette.secondary.light,
         background: palette.secondary.light,
@@ -36,7 +36,7 @@ const LanguageApp = ({ small = false }) => {
             alt="english"
             style={{ width: "30px", height: "20px" }}
           />
-          <Typography>English</Typography>
+          <Typography>{small === true ? "" : "English"}</Typography>
         </Stack>
       </MenuItem>
       <MenuItem value="french">
@@ -46,7 +46,7 @@ const LanguageApp = ({ small = false }) => {
             alt="Français"
             style={{ width: "30px", height: "20px" }}
           />
-          <Typography>Français</Typography>
+          <Typography>{small === true ? "" : "Français"}</Typography>
         </Stack>
       </MenuItem>
     </Select>

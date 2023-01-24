@@ -26,7 +26,7 @@ export const SliderContent = ({ title, text, button, image, link }) => {
           height: "100%",
           marginBottom: { xs: "20px", md: "0" },
         }}
-        alignItems="center"
+        alignItems="flex-start"
         justifyContent={"space-around"}
       >
         <Typography
