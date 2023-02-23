@@ -1,4 +1,4 @@
-import { Box, Divider, IconButton,Typography } from "@mui/material";
+import { Box, Divider, IconButton, Typography } from "@mui/material";
 import React from "react";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "styled-components";
@@ -98,8 +98,13 @@ const Footer = () => {
               Title={"CONTACT"}
               Items={[
                 {
+                  title: "Cote d'Ivoire",
+                  type: "title",
+                },
+                {
                   title: "+225 07 08 06 48 48",
-                  link: Routes.HomeRouteLink,
+                  target: true,
+                  link: "tel:+225 07 08 06 48 48",
                 },
                 {
                   title:
@@ -108,8 +113,32 @@ const Footer = () => {
                 },
                 {
                   title: "client@coollionenergies.com",
-                  link: Routes.NewsRouteLink,
+                  link: "mailto:client@coollionenergies.com",
                   noCap: true,
+                  target: true,
+                },
+                {
+                  title: "________________________",
+                  link: Routes.HomeRouteLink,
+                },
+                {
+                  title: "Rwanda",
+                  type: "title",
+                },
+                {
+                  title: "+250 789 628 067",
+                  link: "tel:+250 789 628 067",
+                  target: true,
+                },
+                {
+                  title: "1 KN 78 St, Kigali, Rwanda",
+                  link: Routes.OurSolutionRouteLink,
+                },
+                {
+                  title: "client@coollionenergies.com",
+                  link: "mailto:client@coollionenergies.com",
+                  noCap: true,
+                  target: true,
                 },
               ]}
             />
@@ -245,8 +274,16 @@ const FooterItems = ({ Items }) => {
   return (
     <>
       {Items.map((item, key) => {
-        return (
-          <Redirect link={item.link} key={item.link}>
+        return item?.type !== undefined ? (
+          <Typography sx={{ fontWeight: "bold", fontSize: "1.1rem" }}>
+            {item.title}
+          </Typography>
+        ) : (
+          <Redirect
+            link={item.link}
+            key={item.link}
+            target={item?.target !== undefined ? item?.target : false}
+          >
             <Typography
               sx={{
                 "&:hover": { textDecoration: "underline" },

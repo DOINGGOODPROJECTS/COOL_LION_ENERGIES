@@ -64,7 +64,15 @@ const ContactPage = () => {
         >
           <List>
             <ListItem>
-              {" "}
+              <Typography
+                variant="h6"
+                color={"primary"}
+                textTransform={"capitalize"}
+              >
+                Cote d'Ivoire
+              </Typography>
+            </ListItem>
+            <ListItem>
               <ListItemIcon>
                 <PhoneIcon sx={{ color: palette.primary.main }} />
               </ListItemIcon>{" "}
@@ -76,6 +84,36 @@ const ContactPage = () => {
               </ListItemIcon>
               Angré Djorobite Rond Point Cité SIR en bas Îlot 253 BIS Villa Lot
               2446, Abidjan-Côte d’Ivoire{" "}
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <EmailIcon sx={{ color: palette.primary.main }} />
+              </ListItemIcon>
+              client@coollionenergies.com
+            </ListItem>
+          </List>
+
+          <List>
+            <ListItem>
+              <Typography
+                variant="h6"
+                color={"primary"}
+                textTransform={"capitalize"}
+              >
+                Rwanda
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PhoneIcon sx={{ color: palette.primary.main }} />
+              </ListItemIcon>{" "}
+              +250 789 628 067
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <PlaceIcon sx={{ color: palette.primary.main }} />
+              </ListItemIcon>
+              1 KN 78 St, Kigali, Rwanda
             </ListItem>
             <ListItem>
               <ListItemIcon>
