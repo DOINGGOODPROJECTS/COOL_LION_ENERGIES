@@ -11,7 +11,7 @@ import meeting from "../../Assets/Imgs/meeting.jpg";
 const FrenchContent = {
   appbar: {
     navLink: {
-      about: "A propos",
+      about: "A propos de nous",
       product: "Produits & Services",
       news: "Actualités",
       contact: "Contacts",
