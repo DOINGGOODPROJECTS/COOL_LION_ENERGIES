@@ -6,7 +6,7 @@ import Home from "../Pages/Home";
 import Products from "../Pages/Products/Products";
 import Reseaux from "../Pages/Reseaux";
 import Routes from "./Routes";
-import TarrifBonus from "../../Assets/Plaquette-tarifs-cool-lion.pdf";
+import TariffBrochure from "../../Assets/Plaquette-tarifs-cool-lion.pdf";
 
 const Router = createBrowserRouter([
   {
@@ -51,8 +51,8 @@ const Router = createBrowserRouter([
         element: <Reseaux />,
       },
       {
-        path: Routes.TarrifBonus,
-        element: TarrifBonus,
+        path: Routes.TariffBrochure,
+        element: TariffBrochure,
       },
     ],
   },
