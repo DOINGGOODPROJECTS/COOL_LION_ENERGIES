@@ -6,7 +6,7 @@ import Home from "../Pages/Home";
 import Products from "../Pages/Products/Products";
 import Reseaux from "../Pages/Reseaux";
 import Routes from "./Routes";
-import TariffBrochure from "../../Assets/Plaquette-tarifs-cool-lion.pdf";
+import TariffBrochure from "../Assets/Plaquette-tarifs-cool-lion.pdf";
 
 const Router = createBrowserRouter([
   {
