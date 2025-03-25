@@ -11,7 +11,6 @@ const Routes = {
   BuildingsRouteLink: "/products/buildings",
   SupportRouteLink: "/products/support",
   ContactRouteLink: "/products/contact",
-  TariffBrochure: "/Plaquette-tarifs-cool-lion",
 };
 
 export default Routes;
