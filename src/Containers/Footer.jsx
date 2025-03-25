@@ -182,7 +182,7 @@ const Footer = () => {
                 {
                   title: ContentLanguage.products.support.title,
                   link: Routes.SupportRouteLink,
-                },
+                }
               ]}
             />
           </Box>
