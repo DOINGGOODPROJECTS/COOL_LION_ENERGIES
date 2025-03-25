@@ -11,6 +11,7 @@ const Routes = {
   BuildingsRouteLink: "/products/buildings",
   SupportRouteLink: "/products/support",
   ContactRouteLink: "/products/contact",
+  TariffBrochure: "https://coollionenergies.com/Plaquette-tarifs-cool-lion.pdf"
 };
 
 export default Routes;
