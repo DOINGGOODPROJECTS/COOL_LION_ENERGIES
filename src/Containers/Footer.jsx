@@ -140,6 +140,12 @@ const Footer = () => {
                   noCap: true,
                   target: true,
                 },
+                {
+                  title: "Catalogues",
+                  link: "/Plaquette-tarifs-cool-lion.pdf",
+                  noCap: true,
+                  target: true,
+                },
               ]}
             />
           </Box>
