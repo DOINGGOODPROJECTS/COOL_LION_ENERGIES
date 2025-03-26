@@ -48,7 +48,7 @@ const Router = createBrowserRouter([
       {
         path: Routes.NewsRouteLink,
         element: <Reseaux />,
-      },
+      }
     ],
   },
 ]);
