@@ -4,6 +4,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { useTheme } from "styled-components";
 import { useSelector } from "react-redux";
 import { selectedLanguage } from "../Context/LanguageSlice";
+import tarifsPdf from "../Assets/Pdfs/tarifs-cool-lion.pdf";
 import Routes from "../Router/Routes";
 import Redirect from "../Helpers/Redirect";
 import LanguageApp from "../Components/LanguageApp";
@@ -139,13 +140,7 @@ const Footer = () => {
                   link: "mailto:client@coollionenergies.com",
                   noCap: true,
                   target: true,
-                },
-                {
-                  title: "Catalogues",
-                  link: "/Plaquette-tarifs-cool-lion.pdf",
-                  noCap: true,
-                  target: true,
-                },
+                },                
               ]}
             />
           </Box>
@@ -182,7 +177,13 @@ const Footer = () => {
                 {
                   title: ContentLanguage.products.support.title,
                   link: Routes.SupportRouteLink,
-                }
+                },
+                {
+                  title: "Tarifs Cool Lion",
+                  link: tarifsPdf,
+                  noCap: true,
+                  target: true,
+                },
               ]}
             />
           </Box>
