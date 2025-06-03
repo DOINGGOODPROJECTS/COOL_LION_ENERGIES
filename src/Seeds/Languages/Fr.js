@@ -176,7 +176,7 @@ const FrenchContent = {
         "Nous proposons la construction de bâtiments à ventilation naturelle, écologiques qui utilisent  notamment des matériaux locaux tels que la brique de terre compressée etc.Nos designs sont à coût modéré, visuellement plaisants et embellissent le cadre de vie rural en transformant vos bâtiments en des lieux de vie.",
     },
     agristock: {
-      title: "Cool AgriStock : Solution numérique open source",
+      title: "Cool AgriStock | Solution numérique open source",
       link: Routes.AgriStockRouteLink,
       image: agriStockImage,
       text: "Cool AgriStock est une plateforme open source qui soutient les chaînes de valeur agricoles locales grâce à des infrastructures modulaires de stockage et de transformation. Conçue pour réduire les pertes post-récolte, elle permet aux coopératives et aux agriculteurs de conserver, sécher et transformer leurs produits de manière plus efficace.",

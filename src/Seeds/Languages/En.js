@@ -181,7 +181,7 @@ const EnglishContent = {
         "We offer naturally ventilated, environmentally friendly buildings that use local materials such as compressed mud bricks etc. Our designs are low cost, visually attractive and beautify rural sightseeing by transforming your buildings into living spaces.",
     },
     agristock: {
-      title: "Cool AgriStock: Open Source Digital Solution",
+      title: "Cool AgriStock | Open Source Digital Solution",
       link: Routes.AgriStockRouteLink,
       image: agriStockImage,
       text: "Cool AgriStock is an open source platform that supports local agricultural value chains with modular storage and processing infrastructure. Designed to reduce post-harvest loss, it enables cooperatives and farmers to preserve, dry, and transform food products more efficiently.",

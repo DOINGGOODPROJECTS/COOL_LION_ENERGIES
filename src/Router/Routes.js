@@ -9,6 +9,7 @@ const Routes = {
   ClimRouteLink: "/products/clim",
   ShedsRouteLink: "/products/sheds",
   BuildingsRouteLink: "/products/buildings",
+  AgriStockRouteLink: "/products/coolagristock",
   SupportRouteLink: "/products/support",
   ContactRouteLink: "/products/contact",
 };
