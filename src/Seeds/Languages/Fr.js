@@ -39,13 +39,20 @@ const FrenchContent = {
       button: "Découvrir",
       image: sheds,
       link: Routes.ShedsRouteLink,
-    },
+    },    
     {
       title: "Cool Bâtiments : Bâtiments écologiques ",
       text: " Des bâtiments écologiques et modernes pour tous vos besoins ",
       button: "Découvrir",
       image: buildingsImage,
       link: Routes.BuildingsRouteLink,
+    },
+    {
+      title: "Cool AgriStock : Stockage Intelligent",
+      text: "Logiciel agricole libre et open source",
+      button: "Découvrir",
+      image: agriStockImage, // À remplacer par l’image correcte
+      link: Routes.AgriStockRouteLink,
     },
   ],
   partner: {

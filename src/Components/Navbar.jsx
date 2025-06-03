@@ -110,6 +110,7 @@ const Navbar = () => {
                   {language.appbar.navLink.about}
                 </Button>
               </Redirect>
+              
               <Button
                 id="basic-button"
                 aria-controls={open ? "basic-menu" : undefined}
@@ -125,9 +126,7 @@ const Navbar = () => {
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
+                MenuListProps={{"aria-labelledby": "basic-button",}}
               >
                 {Object.entries(language.products).map((items, key) => {
                   const item = items[1];
@@ -138,6 +137,7 @@ const Navbar = () => {
                   );
                 })}
               </Menu>
+
               <Redirect link={Routes.NewsRouteLink}>
                 <Button sx={{ color: palette.secondary.main }}>
                   {" "}

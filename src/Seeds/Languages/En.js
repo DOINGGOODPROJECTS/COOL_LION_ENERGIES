@@ -46,6 +46,20 @@ const EnglishContent = {
       button: "Learn more",
       image: buildingsImage,
       link: Routes.BuildingsRouteLink,
+    },    
+    {
+      title: "Cool AgriStock : Green buildings",
+      text: "Green and modern buildings for all your needs",
+      button: "Learn more",
+      image: buildingsImage,
+      link: Routes.BuildingsRouteLink,
+    },
+    {
+      title: "Cool AgriStock: Smart Storage",
+      text: "Free Open Source Software Agricultural",
+      button: "Learn more",
+      image: agriStockImage, // Replace with the correct image import or asset
+      link: Routes.AgriStockRouteLink,
     },
   ],
   partner: {
