@@ -46,8 +46,6 @@ const EnglishContent = {
       button: "Learn more",
       image: buildingsImage,
       link: Routes.BuildingsRouteLink,
-<<<<<<< Updated upstream
-=======
     },    
     {
       title: "Cool AgriStock : Green buildings",
@@ -62,7 +60,6 @@ const EnglishContent = {
       button: "Discover the project",
       image: agriStockImage,
       link: Routes.AgriStockRouteLink,
->>>>>>> Stashed changes
     },
   ],
   partner: {
