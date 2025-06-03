@@ -47,14 +47,7 @@ const EnglishContent = {
       button: "Learn more",
       image: buildingsImage,
       link: Routes.BuildingsRouteLink,
-    },    
-    {
-      title: "Cool AgriStock : Green buildings",
-      text: "Green and modern buildings for all your needs",
-      button: "Learn more",
-      image: buildingsImage,
-      link: Routes.BuildingsRouteLink,
-    },
+    },   
     {
       title: "Cool AgriStock: For Sustainable Agriculture",
       text: "Open source digital solutions serving local agricultural value chains",
@@ -186,6 +179,13 @@ const EnglishContent = {
       text: "A solution well suited for livestock and agriculture: food crops without the need of refrigeration (rice, corn, soybeans, yams, etc.) need to be preserved at room temperature and free from pests - we have reinvented for you the traditional granary or shed for storage.",
       subTitle:
         "We offer naturally ventilated, environmentally friendly buildings that use local materials such as compressed mud bricks etc. Our designs are low cost, visually attractive and beautify rural sightseeing by transforming your buildings into living spaces.",
+    },
+    agristock: {
+      title: "Cool AgriStock: Open Source Digital Solution",
+      link: Routes.AgriStockRouteLink,
+      image: agriStockImage,
+      text: "Cool AgriStock is an open source platform that supports local agricultural value chains with modular storage and processing infrastructure. Designed to reduce post-harvest loss, it enables cooperatives and farmers to preserve, dry, and transform food products more efficiently.",
+      subTitle: "Built with climate-smart design principles and local materials like compressed earth blocks, AgriStock combines technology, sustainability, and affordability. It empowers rural communities—especially women farmers—with tools to add value and build food security from the ground up.",
     },
     support: {
       title: "Consulting & Support ",
