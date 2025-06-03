@@ -175,6 +175,10 @@ const Footer = () => {
                   link: Routes.BuildingsRouteLink,
                 },
                 {
+                  title: ContentLanguage.products.agristock.title,
+                  link: Routes.AgriStockRouteLink,
+                },
+                {
                   title: ContentLanguage.products.support.title,
                   link: Routes.SupportRouteLink,
                 },

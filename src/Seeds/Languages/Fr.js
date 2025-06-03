@@ -179,8 +179,8 @@ const FrenchContent = {
       title: "Cool AgriStock | Solution numérique open source",
       link: Routes.AgriStockRouteLink,
       image: agriStockImage,
-      text: "Cool AgriStock est une plateforme open source qui soutient les chaînes de valeur agricoles locales grâce à des infrastructures modulaires de stockage et de transformation. Conçue pour réduire les pertes post-récolte, elle permet aux coopératives et aux agriculteurs de conserver, sécher et transformer leurs produits de manière plus efficace.",
-      subTitle: "Construite selon des principes de conception climato-intelligente et à partir de matériaux locaux comme les blocs de terre comprimée, AgriStock allie technologie, durabilité et accessibilité. Elle donne aux communautés rurales — en particulier aux femmes agricultrices — les moyens d’ajouter de la valeur et de renforcer la sécurité alimentaire à la base.",
+      text: "Cool AgriStock est une solution open source qui permet aux acteurs agricoles de gérer et valoriser en temps réel leurs stocks depuis des infrastructures locales.",
+      subTitle: "Pensée pour répondre aux défis de pertes post-récolte et d’inefficacité logistique, cette plateforme associe technologie open source, accessibilité et simplicité d’usage, même en milieu rural. Compatible avec des unités de stockage construites en matériaux locaux comme les blocs de terre comprimée, AgriStock renforce l’autonomie des communautés rurales — en particulier des femmes agricultrices — en leur offrant des outils pour améliorer la traçabilité, sécuriser les approvisionnements, et construire une sécurité alimentaire durable.",
     },
     support: {
       title: "Conseil & Accompagnement ",

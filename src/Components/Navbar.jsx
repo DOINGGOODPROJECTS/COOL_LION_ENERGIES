@@ -130,6 +130,7 @@ const Navbar = () => {
                 }}
               >
                 {Object.entries(language.products).map((items, key) => {
+                  console.log(items + ' ' + key);
                   const item = items[1];
                   return (
                     <Redirect link={item.link} key={key}>

@@ -38,6 +38,10 @@ const Router = createBrowserRouter([
         element: <Products path="buildings" />,
       },
       {
+        path: Routes.AgriStockRouteLink,
+        element: <Products path="agristock" />,
+      },
+      {
         path: Routes.SupportRouteLink,
         element: <Products path={"support"} />,
       },
