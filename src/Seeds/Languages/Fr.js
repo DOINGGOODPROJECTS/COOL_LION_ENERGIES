@@ -47,6 +47,16 @@ const FrenchContent = {
       image: buildingsImage,
       link: Routes.BuildingsRouteLink,
     },
+<<<<<<< Updated upstream
+=======
+    {
+      title: "Cool AgriStock : Pour une agriculture durable",
+      text: "Des solutions numériques open source au service des chaînes de valeur agricoles locales",
+      button: "Découvrir le projet",
+      image: agriStockImage,
+      link: Routes.AgriStockRouteLink,
+    },
+>>>>>>> Stashed changes
   ],
   partner: {
     title: "Votre Partenaire Idéal",
