@@ -5,6 +5,7 @@ import sheds from "../../Assets/Imgs/sheds.jpg";
 import emergency from "../../Assets/Imgs/emergency.png";
 import climSolution from "../../Assets/Imgs/climSolution.jpg";
 import shedsSolution from "../../Assets/Imgs/shedsSolution.jpg";
+import agriStockImage from "../../Assets/Imgs/coolagristock.png";
 import Routes from "../../Router/Routes";
 import meeting from "../../Assets/Imgs/meeting.jpg";
 
