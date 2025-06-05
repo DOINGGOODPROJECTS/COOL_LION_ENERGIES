@@ -110,7 +110,7 @@ const Products = ({ path }) => {
         sx={{ paddingBottom: "15vh" }}
       >
         <Box sx={{ width: "100%" }}>
-          <Redirect link={"mailto:richards@coollionenergies.com"} target={true}>
+          <Redirect link={path != 'agristock' ? "mailto:richards@coollionenergies.com" : "https://github.com/DOINGGOODPROJECTS/COOL-AGRISTOCK" } target={true}>
             <Button
               variant="contained"
               size="large"
@@ -123,7 +123,7 @@ const Products = ({ path }) => {
                 },
               }}
             >
-              <Typography>{language.products.button[0]}</Typography>
+              <Typography>{ path != 'agristock' ? language.products.button[0] : language.products.button[2] }</Typography>
             </Button>
           </Redirect>
         </Box>

@@ -141,7 +141,7 @@ const EnglishContent = {
     follow: "Follow us",
   },
   products: {
-    button: ["ASK FOR A QUOTE", " CONTACT FORM"],
+    button: ["ASK FOR A QUOTE", " CONTACT FORM", "FREE DOWNLOAD"],
     emergency: {
       title: "Cool Emergency Rental  | Refrigeration when you need it",
       link: Routes.EmergencyRouteLink,

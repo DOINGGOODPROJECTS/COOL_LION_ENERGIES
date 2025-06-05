@@ -136,7 +136,7 @@ const FrenchContent = {
     follow: "Nous suivre",
   },
   products: {
-    button: ["DEMANDEZ UN DEVIS", "FORMULAIRE CONTACT"],
+    button: ["DEMANDEZ UN DEVIS", "FORMULAIRE CONTACT", "TELECHARGER GRATUITEMENT"],
     emergency: {
       title: "Cool Urgence Location | Chambres froides solaires",
       link: Routes.EmergencyRouteLink,
